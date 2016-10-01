@@ -5,5 +5,9 @@ get '/' do
 end
 
 not_found do
-erb :error
+  erb :error
+end
+
+get '/setting' do
+  erb :setting
 end
