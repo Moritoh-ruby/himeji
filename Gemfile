@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# ruby version
+ruby '2.2.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
@@ -45,3 +46,5 @@ group :development do
   gem 'spring'
 end
 
+# Production
+gem 'rails_12factor', group: :production
