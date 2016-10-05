@@ -28,6 +28,12 @@
 <ul class="nav navbar-nav">
 <li><a href="/">トップ</a></li>
 <li><a href="/setting">設定</a></li>
+<% if user_signed_in? %>
+Signed in as <%= current_user.email %>. <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<% else %>
+<%= link_to "ログイン", new_user_session_path, :class => 'post' %>
+<%= link_to "新規登録", new_user_registration_path, :class => 'post' %>
+<% end %>
 </ul>
 </div>
 </nav>
