@@ -11,7 +11,8 @@
   <div class="container">
   <h1>したつもり貯金</h1>
      <p> 金額：</p>
-       <form method="get" action="/addMoney">
+       <form method="post" action="/addMoney" name="myForm">
+       <%= form_tag('/addMoney', name: "myForm", method: :post) do %>
        <select id="text" name="kane1">
        <option>1</option>
        <option>2</option>
@@ -23,9 +24,8 @@
        <option>8</option>
        <option>9</option>
        <input type="text" name="kane2" readonly="readonly" value="00円">
-       <input type="submit" class="twitter" tabIndex="0"><a id="twitter_button" class="btn" >飲んだつもりにする！！</a>
-       </form>
-       <div class="twitter" tabIndex="0"><a id="twitter_button" class="btn" onclick="funcBtn();" >飲んだつもりにする！！</a></div>
+       <input type="submit" class="twitter" tabIndex="0" id="twitter_button" value = 飲んだつもりにする！！>
+     <% end %>
 
        <% if user_signed_in? %>
        <% current_total = (current_user.total.blank? ? 0 : current_user.total.to_i) %>
@@ -48,17 +48,20 @@
          }
 	 
          window.open().location.href  = ("https://twitter.com/share?url=" + url + "&amp;text=" + tw_contents + tw_contents_total + "&amp;count=none&amp;lang=ja"); 
-       });
-	function funcBtn() {
+
     // エレメントを作成
     	var ele = document.createElement('input');
     // データを設定
     	ele.setAttribute('type', 'hidden');
-    	ele.setAttribute('name', 'hoge');
+    	ele.setAttribute('name', 'tweet_value');
     	ele.setAttribute('value', parseInt(document.getElementById( "text" ).value) * 100);
     // 要素を追加
 	    document.myForm.appendChild(ele);
-	}
+	    document.myForm.submit();
+  
+
+});
+
     </script>
       </form>
 	<%= params %>
