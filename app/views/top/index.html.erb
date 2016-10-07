@@ -11,7 +11,7 @@
   <div class="container">
   <h1>したつもり貯金</h1>
      <p> 金額：</p>
-       <form method="post" action="/addMoney" name="myForm">
+      <!-- <form method="post" action="/addMoney" name="myForm"> -->
        <%= form_tag('/addMoney', name: "myForm", method: :post) do %>
        <select id="text" name="kane1">
        <option>1</option>
@@ -35,7 +35,8 @@
        <script>
        $('#twitter_button').click(function() {
          var money = parseInt(document.getElementById( "text" ).value) * 100;
-         var tw_contents = (money + "円節約しました" + " %23" + "したつもり貯金" + " %23" + "どや" + " %23" + "aiit_enpit");
+         var tw_contents = (money + "円節約しました。");
+         var tw_hashtags = "%23" + "したつもり貯金" + " %23" + "どや" + " %23" + "aiit_enpit";
          var url = "http://goo.gl/CYvhxG";
          var tw_contents_total = "";
          if (<%= current_total %> != -1) {
@@ -47,7 +48,7 @@
            }
          }
 	 
-         window.open().location.href  = ("https://twitter.com/share?url=" + url + "&amp;text=" + tw_contents + tw_contents_total + "&amp;count=none&amp;lang=ja"); 
+         window.open().location.href  = ("https://twitter.com/share?url=" + url + "&amp;text=" + tw_contents + tw_contents_total + tw_hashtags + "&amp;count=none&amp;lang=ja"); 
 
     // エレメントを作成
     	var ele = document.createElement('input');
@@ -63,8 +64,7 @@
 });
 
     </script>
-      </form>
-	<%= params %>
+   <!--   </form> -->
     <script src="js/bootstorap.min.js"></script>
   </div>
   </body>

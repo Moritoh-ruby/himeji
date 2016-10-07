@@ -11,6 +11,6 @@ class TopController < ApplicationController
       current_user.total = total_after.to_s
       current_user.save
     end
-    render action: :index 
+    redirect_to action: :index
   end
 end
