@@ -1,0 +1,28 @@
+<html lang="ja">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" src="javascript/test.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body>
+  <div class="container">
+  <h1>したつもり貯金</h1>
+  <% if user_signed_in? %>
+  <p>今回：<%= @total_before %>円</p>
+  <p>合計貯金額：<%= @total_after %>円</p>
+  <% else %>
+  <p>今回：<%= @total_before %>円</p>
+  <p>ログインして合計貯金額をチェックしよう</p>
+  <% end %>
+       <% if user_signed_in? %>
+       <% current_total = (current_user.total.blank? ? 0 : current_user.total.to_i) %>
+       <% else %>
+       <% current_total = -1 %>
+       <% end %>
+   <!--   </form> -->
+    <script src="js/bootstorap.min.js"></script>
+  </div>
+  </body>
+</html>

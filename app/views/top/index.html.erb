@@ -12,7 +12,7 @@
   <h1>したつもり貯金</h1>
      <p> 金額：</p>
       <!-- <form method="post" action="/addMoney" name="myForm"> -->
-       <%= form_tag('/addMoney', name: "myForm", method: :post) do %>
+       <%= form_tag('/result', name: "myForm", method: :post) do %>
        <select id="text" name="kane1">
        <option>1</option>
        <option>2</option>
@@ -25,45 +25,8 @@
        <option>9</option>
        <input type="text" name="kane2" readonly="readonly" value="00円">
        <input type="submit" class="twitter" tabIndex="0" id="twitter_button" value = 飲んだつもりにする！！>
-     <% end %>
-
-       <% if user_signed_in? %>
-       <% current_total = (current_user.total.blank? ? 0 : current_user.total.to_i) %>
-       <% else %>
-       <% current_total = -1 %>
        <% end %>
-       <script>
-       $('#twitter_button').click(function() {
-         var money = parseInt(document.getElementById( "text" ).value) * 100;
-         var tw_contents = (money + "円節約しました。");
-         var tw_hashtags = "%23" + "したつもり貯金" + " %23" + "どや" + " %23" + "aiit_enpit";
-         var url = "https://goo.gl/D6RWc0";
-         var tw_contents_total = "";
-         if (<%= current_total %> != -1) {
-           var updated_total = <%= current_total %> + money;
-           if (updated_total == money) {
-             tw_contents_total = "これが初めての貯金です！"
-           } else {
-             tw_contents_total = "今までに" + updated_total + "円貯金しました！"
-           }
-         }
-	 
-         window.open().location.href  = ("https://twitter.com/share?url=" + url + "&amp;text=" + tw_contents + tw_contents_total + tw_hashtags + "&amp;count=none&amp;lang=ja"); 
 
-    // エレメントを作成
-    	var ele = document.createElement('input');
-    // データを設定
-    	ele.setAttribute('type', 'hidden');
-    	ele.setAttribute('name', 'tweet_value');
-    	ele.setAttribute('value', parseInt(document.getElementById( "text" ).value) * 100);
-    // 要素を追加
-	    document.myForm.appendChild(ele);
-	    document.myForm.submit();
-  
-
-});
-
-    </script>
    <!--   </form> -->
     <script src="js/bootstorap.min.js"></script>
   </div>
