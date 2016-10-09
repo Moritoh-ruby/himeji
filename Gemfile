@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 gem 'devise'
+gem 'devise-i18n'
 # ruby version
 ruby '2.2.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
