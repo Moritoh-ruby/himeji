@@ -31,9 +31,9 @@
        <% current_total = (current_user.total.blank? ? 0 : current_user.total.to_i) %>
        <% else %>
        <% current_total = -1 %>
-       <% end %>
-       <script>
-       $('#twitter_button').click(function() {
+      <% end %>
+      <script>
+     $('#twitter_button').click(function() {
          var money = parseInt(document.getElementById( "text" ).value) * 100;
          var tw_contents = (money + "円節約しました。");
          var tw_hashtags = "%23" + "したつもり貯金" + " %23" + "どや" + " %23" + "aiit_enpit";
@@ -62,9 +62,8 @@
   
 
 });
-
-    </script>
-   <!--   </form> -->
+   </script>
+  <!--    </form> -->
     <script src="js/bootstorap.min.js"></script>
   </div>
   </body>
