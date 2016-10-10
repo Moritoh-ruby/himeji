@@ -9,9 +9,8 @@ class TopController < ApplicationController
      current_user.total = @total_after.to_s
      current_user.save
   end
-  
-  
   end
+  
   def setting
   end
 end

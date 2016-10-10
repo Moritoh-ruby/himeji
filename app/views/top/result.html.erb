@@ -21,7 +21,34 @@
        <% else %>
        <% current_total = -1 %>
        <% end %>
+  <% if user_signed_in? %>
+   <% if @total_before == @total_after %>
+   <div class="twitter"><a href="http://twitter.com/share?url=https://goo.gl/D6RWc0&amp;text=<%=@total_before%>円節約しました。これが初めての貯金です！%23したつもり貯金 %23どや %23aiit_enpit" class="twitter-share-button" data-lang="ja">Twitterでシェア</a></div>
+   <% else %>
+   <div class="twitter"><a href="http://twitter.com/share?url=https://goo.gl/D6RWc0&amp;text=<%=@total_before%>円節約しました。今までに<%=@total_after%>円貯金しました！%23したつもり貯金 %23どや %23aiit_enpit"class="twitter-share-button" data-lang="ja">Twitterでシェア</a></div>
+   <% end %>
+ <% else %>
+   <div class="twitter"><a href="http://twitter.com/share?url=https://goo.gl/D6RWc0&amp;text=<%=@total_before%>円節約しました。%23したつもり貯金 %23どや %23aiit_enpit" class="twitter-share-button" data-lang="ja">Twitterでシェア</a></div>
    <!--   </form> -->
+ <% end %>
+ <a class="twitter-timeline"  href="https://twitter.com/hashtag/%E3%81%97%E3%81%9F%E3%81%A4%E3%82%82%E3%82%8A%E8%B2%AF%E9%87%91" data-widget-id="785352546680352768">#したつもり貯金 のツイート</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<script>
+  window.twttr = (function (d,s,id) {
+  var t, js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+  js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+  return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+  }(document, "script", "twitter-wjs"))
+ 
+  // twitter callback
+  twttr.ready(function (twttr) {
+    twttr.events.bind('tweet', function(event) {
+      
+    });
+  });
+</script>
     <script src="js/bootstorap.min.js"></script>
   </div>
   </body>
