@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+<<<<<<< HEAD
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
@@ -64,5 +65,29 @@
   <!--    </form> -->
     </div>  
   </div>
+=======
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+    <h1>したつもり貯金</h1>
+     <p> 金額：</p>
+       <%= form_tag('/result', name: "myForm", method: :post) do %>
+         <select id="text" name="kane1">
+           <option>1</option>
+           <option>2</option>
+           <option>3</option>
+           <option>4</option>
+           <option>5</option>
+           <option>6</option>
+           <option>7</option>
+           <option>8</option>
+           <option>9</option>
+         <input type="text" name="kane2" readonly="readonly" value="00円">
+         <input type="submit" class="twitter" tabIndex="0" id="twitter_button" value = 飲んだつもりにする！！>
+       <% end %>
+    </div>
+>>>>>>> origin/master
   </body>
 </html>
