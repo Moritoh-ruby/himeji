@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+devise_for :users
 get '/'  => 'top#index'
-post '/addMoney'  => 'top#add_money'
+post '/result'  => 'top#result'
+get '/result' => 'top#result'
 get '/setting' => 'top#setting'
   # The priority is based upon order of creation: first created -> highest priority.
 #index'

@@ -2,15 +2,15 @@ class TopController < ApplicationController
 
   def index
   end
-  def setting
+  def result
+     @total_before = params[:kane1].to_i*100
+  if user_signed_in? then
+     @total_after = @total_before + current_user.total.to_i
+     current_user.total = @total_after.to_s
+     current_user.save
   end
-  def add_money
-    if user_signed_in? then
-      total_before = current_user.total.to_i
-      total_after = total_before + params[:tweet_value].to_i
-      current_user.total = total_after.to_s
-      current_user.save
-    end
-    redirect_to action: :index
+  end
+  
+  def setting
   end
 end
