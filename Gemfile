@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 gem 'devise'
 gem 'devise-i18n'
+
+# add_goal
 gem 'activerecord-import'
+
+
 # ruby version
 ruby '2.2.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -38,6 +42,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # add_debug
+  gem 'ruby-debug-ide'
+  gem 'debase'
+
 end
 
 group :development do

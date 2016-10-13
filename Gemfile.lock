@@ -30,6 +30,8 @@ GEM
       activemodel (= 4.2.6)
       activesupport (= 4.2.6)
       arel (~> 6.0)
+    activerecord-import (0.16.1)
+      activerecord (>= 3.2)
     activesupport (4.2.6)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -50,6 +52,9 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    debase (0.2.1)
+      debase-ruby_core_source
+    debase-ruby_core_source (0.9.2)
     debug_inspector (0.0.2)
     devise (4.2.0)
       bcrypt (~> 3.0)
@@ -126,6 +131,8 @@ GEM
     ref (2.0.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    ruby-debug-ide (0.6.0)
+      rake (>= 0.8.1)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -170,8 +177,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-import
   byebug
   coffee-rails (~> 4.1.0)
+  debase
   devise
   devise-i18n
   jbuilder (~> 2.0)
@@ -179,6 +188,7 @@ DEPENDENCIES
   pg (~> 0.15)
   rails (= 4.2.6)
   rails_12factor
+  ruby-debug-ide
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
