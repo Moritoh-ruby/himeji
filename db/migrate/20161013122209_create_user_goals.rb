@@ -4,7 +4,6 @@ class CreateUserGoals < ActiveRecord::Migration
       t.integer :user_id
       t.string :buttonStr
       t.integer :goalMoney
-      t.integer :goalMoney
       t.integer :total
       t.boolean :finish
 

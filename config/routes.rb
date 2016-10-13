@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  #get 'setting/reggoal'
-  resources :setting, :only => [ :reggoal ]
+  get '/setting'  => 'setting#reggoal'
+  post '/regGoalMoney'  => 'setting#regGoalMoney'
   devise_for :users
   get '/'  => 'top#index'
   post '/addMoney'  => 'top#add_money'

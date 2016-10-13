@@ -2,8 +2,6 @@ class TopController < ApplicationController
 
   def index
   end
-  def setting
-  end
   def add_money
     if user_signed_in? then
       total_before = current_user.total.to_i
