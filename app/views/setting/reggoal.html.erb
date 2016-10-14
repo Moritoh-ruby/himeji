@@ -14,9 +14,9 @@
       <!-- <form method="post" action="/addMoney" name="myForm"> -->
         <%= form_tag('/regGoalMoney', name: "myForm", method: :post) do %>
             <p> 目標：
-            <input type="text" name="txtGoal" ></p>
+            <input type="text" name="txtGoal" maxlength='20'></p>
             <p> 目標金額：
-            <input type="text" name="money" ></p>
+            <input type="number" name="money" maxlength='10' pattern="^[0-9]+$">円</p>
             <input type="submit" tabIndex="0" value = 設定する！！>
         <% end %>
  <!--   </form> -->

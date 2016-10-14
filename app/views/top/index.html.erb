@@ -24,6 +24,10 @@
        <input type="text" name="kane2" readonly="readonly" value="00円">
        <input type="submit" class="twitter" tabIndex="0" id="twitter_button" value = 飲んだつもりにする！！>
      <% end %>
+      <% if user_signed_in? %>
+        <% goal1 = current_user.user_goals.find_by(user_id:current_user.id.to_s) %>
+        <p>目標金額：<%= goal1.goalMoney.to_s %>円</p>
+      <% end %>
     </div>
    </div>
  </body>
