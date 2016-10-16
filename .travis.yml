@@ -2,15 +2,15 @@ language: ruby
 rvm:
 - 2.2.5
 addons:
- postgresql: '9.3'
+  postgresql: '9.3'
 before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
 - cp config/database.yml.travis config/database.yml
 - bin/rake db:migrate RAILS_ENV=test
 deploy:
   provider: heroku
-  api_key: 
-    secure: n9MjB462a0R6bZyqfuEkkNv1tz+nxRCdXxKdP1XoU+OZTHJ2w50iJbP08WnV/98M2/j577ojPdpLwJbLeT4eGjpmevlcW6P+/EjcqVFFt5Ya+kljpMerYEYto13EDYrw4L6rkeftcshDEf8ARjvXdl9WxQJVVEj3yPZw5fUAHJIfi7/zYSHeqh2Wk51hEBt2lq0p00ROZli8ldfInALD81/b/oE3sK9gXYlMMrRYsFehN+KnxTnJBxUOBiV6te9jhXWEmcf4BELjcFz1YRi3QYXFzmEJA9JCi2diflhjgI0k4/FZjX0rTdrpDEirIDNYTMVPPGf+lUu+EBRk4+qMNNtwYOyY/19H/tBkfCuMoQ6NrBy/cMjgQa40oui13YUZkYE44efeUPuL2jXfG6Wwv9g2OWo0KURmyTkv8qnBDvgg7n/2fAyu6oup79ROuwzu9AOcf8tHEhz/PpPP8eRmX45ooO8+vJIPHHnIvPWNAJo7QR7KMidKydIbgNuhYoYqM2vgDmRJbtzydDygru3DAwfp9N5wTLseafCF/fASGh3NzyrIslCZiE4/KT87vVaj1wmvZOUPRsvatrbD9T6bbkOZ6L9MwqBNTDmAFlSk5Tr2rwyYM3Jki1Yzf0WI9v6a00wzEsDtVK+KXA1GlrOWiVWD6UaIoD3yagZyBA7DsY=
+  api_key:
+    secure: ggCB8pFU4heuUmtDQYVauateNKIhtpSGAoPdaAIHzRvIWrjIaVi3mzDuPD4y7pYvK61IaqhvkVCSo9/t1MsK+6F/OzJONz4jYvHvvhWImdBG60nu8C/tXQQJeHVJMrBxw9eLUVsXnWm9VFTN2Ngz8MFwSIFpEW9Ne6CeXkPMPC4Vc5NtoUgD+Cu7YcdIV1G4ijLZ9XYuZcOKI9AU/WoGz7kg12WVVBPgopmMoPzS2KER31mu7/oYEyhxji8nx9VTn61XBPNAv0um2o2j5mvU6IAjFMVIpe1OImMzctxU20dBOoXWu89HgyYpYjImO6AoeI6qXRvup1h8G2rhjSwo2Bp9qmNc1n+Kqj1mxliByxaZdE+vZuVF0uZdQZ+wpw2wE0oJ7k+2G4fU01VRtuejNkWjhkinGHCCS9kQuf3hYjnrWtet64H6pbgnFarxYyJw4PygpPS4efnjiycfjVlJF/726viBMOar9iVaNNoZnQugtgglAHpEpK0hPJdnUO9rnq0f5LitR4SriBIGActtKb2l/FQ/65lzUS57ajEiHSkiBnBabpK/uI4EypvAdaMz/ax6gV0zOno6MBPXHCJVAobD8j/tTMKxs+WoB+DCHWbwgQbQjVgBwcWnI1FNTR92laxhojOA0SsVkhJKpa2Fk5N3QNqhWNE5k+/vqxgxlJQ=
   app: rocky-waters-21208
   on:
     repo: Moritoh-ruby/himeji
