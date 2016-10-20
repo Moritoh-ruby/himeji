@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+- 2.2.5
+addons:
+ postgresql: '9.3'
+before_script:
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+- bin/rake db:migrate RAILS_ENV=test
+deploy:
+  provider: heroku
+  api_key:
+    secure: yhFpTXs6HftGa0wLZYlBrKJftNFk6eYnvDRt5YpVqloOrUbLHMvAuBf/zW1n/2QIh86YQLCh552cRIuD7cvqL6dpHMmNR4deZOrvbfWi1QKMad4248DFngAb2mohwsXnD48bPzW4SqGLpKBszJfrF1PARLzNTKaO4k/B/CZT9+AnHWJc4t+f07sW4fk0TCMLEoQvM+sDsMZPKjBJxMVfcuSmkxE/f+rERQegMuhoZ6Wfa+eEuXP9R28iR/CP8yDhskGLIfzxwN0A8B4vO90sc6EIv8s1vZUATeyOhiFEFI5dKhvKzZgpCUOGq4d+HhFhHfxPAcZvNnADJ+tWpPq/f5jsQjkRQDPP1xLiX7AoGmVrbBkVfzj7n6amkEShrcvFUUkFIiFOCXBJ+3reDeENS3tdfkapi8vQ7hYcBCFZeH90xD+JH1kSzoCjcPsNe6a4zMzpCuCwUPY9a11iA4+LgJ3yZbiA792qSCORmXSYITldJeRlMiNoomPUx6KtjNqmSHJ8dwonMc0TUUk+SOxzUR/StDoQPPcm8te8pw938+BYSjrO47UekrecXAIzcmPN6Bo02jmnhNC6r1wMwAIf8XMYibImyLVDu7XC1HBj5SB725C5LqsavPW5aN088aQ4AHql2J9qPsxI8iBP04KdmW0w+IJuKgVm9/3JOd/7b0s=
+  app: rocky-waters-21208
+  on:
+    repo: Moritoh-ruby/himeji
+  run:
+  - rake db:migrate
