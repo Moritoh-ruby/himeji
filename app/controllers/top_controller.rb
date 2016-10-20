@@ -25,10 +25,12 @@ class TopController < ApplicationController
 
        #DB更新処理
        #TODO 目標テーブルの合計金額と比較して、目標金額を超えたばあいにfinishフラグをtrueにする
-       if current_user.total.to_i > current_user.user_goals.find_by(finish: false).goalMoney then
-         rec = current_user.user_goals.find_by(finish: false)
-         rec.finish = true
-         rec.save
+       if current_user.user_goals.count > 0 && current_user.user_goals.find_by(finish: false) != nil then
+         if current_user.total.to_i > current_user.user_goals.find_by(finish: false).goalMoney then
+           rec = current_user.user_goals.find_by(finish: false)
+           rec.finish = true
+           rec.save
+         end
        end
 
        if @total_after == @total_before then
