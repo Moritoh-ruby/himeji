@@ -2,6 +2,7 @@ class TopController < ApplicationController
 
   def index
   end
+
   def result
      @total_before = params[:kane1].to_i*100
   if user_signed_in? then
@@ -11,6 +12,4 @@ class TopController < ApplicationController
   end
   end
   
-  def setting
-  end
 end

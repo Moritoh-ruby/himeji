@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+
+get '/setting'  => 'setting#reggoal'
+post '/regGoalMoney'  => 'setting#regGoalMoney'
+
 devise_for :users
 get '/'  => 'top#index'
 post '/result'  => 'top#result'
 get '/result' => 'top#result'
-get '/setting' => 'top#setting'
+
   # The priority is based upon order of creation: first created -> highest priority.
 #index'
   # See how all your routes lay out with "rake routes".
