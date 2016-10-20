@@ -9,9 +9,8 @@
   </head>
   <body>
   <div class="container">
-  <h1>目標設定</h1>
-     
-      <!-- <form method="post" action="/addMoney" name="myForm"> -->
+  <% if current_user.user_goals.exists?(finish: false)  %>
+    <h1>目標設定</h1>
         <%= form_tag('/regGoalMoney', name: "myForm", method: :post) do %>
             <p> 目標：
             <input type="text" name="txtGoal" maxlength='20'></p>
@@ -19,7 +18,29 @@
             <input type="number" name="money" maxlength='10' pattern="^[0-9]+$">円</p>
             <input type="submit" tabIndex="0" value = 設定する！！>
         <% end %>
- <!--   </form> -->
+  <% else %>
+    <h1>目標確認</h1>  
+  <% end %>   
+
+      <TABLE border="1" align="left">
+	      <TR>
+		      <TH>状態</TH>
+		      <TH>目標</TH>
+          <TH>金額</TH>
+	      </TR>
+      <% @goals.each do |goal| %>
+	      <TR>
+        <% if goal.finish? %>
+          <TD>未達成</TD>
+        <% else %>
+          <TD>達成</TD>
+        <% end %>
+		      <TD width="200" ><%=goal.buttonStr.to_s %></TD>
+		      <TD width="100"><%=goal.goalMoney.to_s %></TD>
+         </TR>
+      <% end %>
+      </TABLE>
+    
     <script src="js/bootstorap.min.js"></script>
   </div>
   </body>
