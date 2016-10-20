@@ -6,7 +6,6 @@ class TopController < ApplicationController
   def result
 
      @total_before = params[:kane1].to_i*100
-<<<<<<< HEAD
 
      @tweet_personal_temptation = "コーヒーを飲む"
      @tweet_text_base = "円節約しました。"
