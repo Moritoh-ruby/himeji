@@ -9,6 +9,11 @@ class TopController < ApplicationController
      @total_after = @total_before + current_user.total.to_i
      current_user.total = @total_after.to_s
      current_user.save
+    if current_user.total.to_i > current_user.user_goals.find_by(finish: false).goalMoney then
+      rec = current_user.user_goals.find_by(finish: false)
+      rec.finish = true
+      rec.save
+    end
   end
   end
   
