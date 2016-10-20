@@ -1,6 +1,10 @@
 class TopController < ApplicationController
 
   def index
+     if user_signed_in? && UserGoal.find_by(:user_id => current_user.id)
+     @usergoal = UserGoal.find_by(:user_id => current_user.id)
+     end
+     
   end
 
   def result
