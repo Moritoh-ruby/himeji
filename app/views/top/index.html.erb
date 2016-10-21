@@ -8,9 +8,8 @@
   
      
  <h1>したつもり貯金</h1>
-     <p> 金額：</p>
-      
        <%= form_tag('/result', name: "myForm", method: :post) do %>
+       <p> 金額：
        <select id="text" name="kane1">
        <option>1</option>
        <option>2</option>
@@ -23,6 +22,7 @@
        <option>9</option>
        <input type="text" name="kane2" readonly="readonly" value="00円">
        <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = 飲んだつもりにする！！>
+       </p>
      <% end %>
     
    
