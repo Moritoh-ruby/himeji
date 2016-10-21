@@ -1,26 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+$pink:#FF66FF;
+$w_pink:#ff0099;
 body {
-        background-color: #33CCFF;        
-        background-image: image-url("money_chokinbako.png");
-        background-position:80%;
+        background-color: #3333FF;        
+        background-image:image-url("money_chokinbako.png");
+        background-position:95%;
         color: black; 
         font-family: Meiryo, sans-serif;
 }
 .jumbotron{ 
        background-color: rgba(255,250,250,.50);
-      
-       background-repeat:no-repeat;
+       background-repeat:repeat-y;   
             
        color:black;
 }
-
+         
 .large-button {
         border: 1px solid #15aeec;
         background-color: #49c0f0;
-        background-image: -webkit-linear-gradient(top, #49c0f0, #2cafe3);
-        background-image: linear-gradient(to bottom, #49c0f0, #2cafe3);
+        background-image: -webkit-linear-gradient(top, $pink, $w_pink);
+        background-image: linear-gradient(to bottom, $pink, $w_pink);
         border-radius: 4px;
         color: #fff;
         line-height: 50px;
