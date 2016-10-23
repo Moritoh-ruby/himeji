@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
-  buttonStr: MyString
-  goalMoney: 1
-  total: 1
+  user_id: mori@to.jp
+  buttonStr:百名城めぐり
+  goalMoney:100000 
+  total: 20000
   finish: false
 
 two:
-  user_id: 1
-  buttonStr: MyString
-  goalMoney: 1
-  total: 1
-  finish: false
+  user_id: ari@tomo.jp
+  buttonStr:合コン 
+  goalMoney:5000 
+  total: 5000
+  finish: success
