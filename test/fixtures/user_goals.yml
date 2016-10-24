@@ -2,14 +2,14 @@
 
 one:
   user_id: mori@to.jp
-  buttonStr:百名城めぐり
-  goalMoney:100000 
+  buttonStr: 百名城めぐり
+  goalMoney: 100000 
   total: 20000
   finish: false
 
 two:
   user_id: ari@tomo.jp
-  buttonStr:合コン 
-  goalMoney:5000 
+  buttonStr: 合コン 
+  goalMoney: 5000 
   total: 5000
   finish: success
