@@ -8,3 +8,6 @@ one:
   id: 1
   email: a@a.a
 
+two:
+  id: 2
+  email: b@b.b
