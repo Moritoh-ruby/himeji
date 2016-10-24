@@ -1,14 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
+  user_id:1
  buttonStr: myString
   goalMoney: 10000
   total: 5000 
   finish: false
 
 two:
-  user_id: 2
+  user_id:2
   buttonStr: MyString 
   goalMoney: 5000 
   total: 5000
