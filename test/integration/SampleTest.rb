@@ -4,5 +4,7 @@ class SampleTest < ActionDispatch::IntegrationTest
     fill_in 'メールアドレス' , with: 'email'
     fill_in 'パスワード'  , with: 'password'
     click_button 'ログイン'
-    asssert_equal '/',     '
-
+    assert_equal '/',page.current_path
+  end
+end
+ 

@@ -7,6 +7,6 @@ class SettingControllerTest < ActionController::TestCase
   end
   test "should get regGoalMoney" do
     get :regGoalMoney
-    assert_response :succes
+    assert_response :success
   end
 end
