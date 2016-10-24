@@ -2,14 +2,14 @@
 
 one:
   user_id:1
- buttonStr: watch movie
+ buttonStr: 'movie'
   goalMoney: 10000
   total: 5000 
   finish: false
 
 two:
   user_id:2
-  buttonStr: travel
+  buttonStr: 'travel'
   goalMoney: 5000 
   total: 5000
   finish: " "
