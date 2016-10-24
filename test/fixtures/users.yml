@@ -5,7 +5,5 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-# column: value
-#
-two:
-#  column: value
+  id: 1
+  email: a@a.a
