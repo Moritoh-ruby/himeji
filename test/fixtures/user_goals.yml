@@ -2,7 +2,7 @@
 
 one:
   user_id: 1
- buttonStr: 'movie'
+  buttonStr: 'movie'
   goalMoney: 10000
   total: 5000 
   finish: false
