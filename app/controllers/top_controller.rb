@@ -1,5 +1,5 @@
 class TopController < ApplicationController
-
+ 
   def index
      #サインインしていて、現在のユーザーのuser_idがUserGoalにあった場合の処理
      if user_signed_in? && UserGoal.find_by(:user_id => current_user.id)
