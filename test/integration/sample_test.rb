@@ -1,4 +1,7 @@
+require 'test_helper'
+
 class SampleTest < ActionDispatch::IntegrationTest
+
   test 'login success' do
     visit 'user_signed_in?'
     fill_in 'メールアドレス' , with: 'email'
