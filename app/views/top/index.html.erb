@@ -7,9 +7,9 @@
   <body>
 
     <h1>したつもり貯金</h1>
-     
-       <%= form_tag('/result', name: "myForm", method: :post) do %>
-         <p> 金額：  
+     <p> 金額：</p>
+       <%= form_tag('/result', name: "myForm", method: :post) do %> 
+   
          <select id="text" name="kane1">
            <option>1</option>
            <option>2</option>
@@ -22,9 +22,14 @@
            <option>9</option>
          </select>
          <span>00円のコーヒーを</span>
+
+         <% if user_signed_in? && UserGoal.find_by(:user_id => current_user.id) %>
+         <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = <%= @usergoal.buttonStr %>為に飲んだつもりにする>
+         <% else %>
          <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = 飲んだつもりにする！！>
          </p>
        <% end %>
-       
+　　　　<% end %>
+
  </body>
 </html>
