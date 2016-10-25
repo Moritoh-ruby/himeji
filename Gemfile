@@ -46,7 +46,7 @@ group :development, :test do
   # add_debug
   gem 'ruby-debug-ide'
   gem 'debase'
-
+  gem 'capybara'
 end
 
 group :development do
