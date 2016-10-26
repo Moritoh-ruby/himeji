@@ -192,6 +192,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-import
+  addressable
   bootstrap-sass (= 3.2.0.0)
   byebug
   capybara

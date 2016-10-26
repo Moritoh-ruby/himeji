@@ -47,7 +47,8 @@ group :development, :test do
   gem 'ruby-debug-ide'
   gem 'debase'
   gem 'capybara'
-
+  
+  gem 'addressable', require: 'addressable/uri'
 end
 
 group :development do
