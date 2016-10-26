@@ -33,13 +33,17 @@ class TopControllerTest < ActionController::TestCase
     assert_equal hashtags, assigns[:tweet_hashtags]
   end
 
-  test "login test" do
+  test "invalid login test" do
     get :index
     assert_response :success
  end
  
+  test "login test" do
+    sign_in users(:alice)
+    get :index  
+    assert_response :success     
+  end
+
 end
-
-
 
 
