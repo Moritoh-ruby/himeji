@@ -68,4 +68,17 @@ class TopControllerTest < ActionController::TestCase
     assert_equal tweet_text, assigns[:tweet_text]
   end
 
+  test "unauthenticated users can GET index" do
+    get :index
+    assert_response :success
+  end
+ 
+  test "authenticated users can GET index" do
+    sign_in users(:alice)
+    get :index  
+    assert_response :success     
+  end
+
 end
+
+
