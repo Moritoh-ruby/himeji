@@ -35,10 +35,7 @@ class TopController < ApplicationController
        #目標テーブルが金額を超えていたらfinish=trueにする
          if rec.finish == false && rec.total >= rec.goalMoney then
               rec.finish = true
-<<<<<<< HEAD
 
-=======
->>>>>>> master
          end
          rec.save
        end
