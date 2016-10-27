@@ -1,3 +1,14 @@
 alice: 
-  id: 1
   email: 'a@a.a' 
+  total: 1000
+
+bob: 
+  email: 'b@b.b' 
+  total: 1000
+
+chris: 
+  email: 'c@c.c' 
+
+dean: 
+  email: 'd@d.d'
+  total: 1000

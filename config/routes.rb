@@ -3,7 +3,13 @@ Rails.application.routes.draw do
 get '/setting'  => 'setting#reggoal'
 post '/regGoalMoney'  => 'setting#regGoalMoney'
 
-devise_for :users
+devise_for :users, :controllers => {
+  :sessions      => "users/sessions",
+  :registrations => "users/registrations",
+  :passwords     => "users/passwords",
+  :omniauth_callbacks => "users/omniauth_callbacks" 
+}
+
 get '/'  => 'top#index'
 post '/result'  => 'top#result'
 get '/result' => 'top#result'
