@@ -22,23 +22,8 @@ body {
             
        color:$jumbo-color;
 }
-
 .navbar-default .navbar-nav > li > a {
-color: #ffffff;
-}
-
-         
-.large-button {
-        border: 1px solid #15aeec;
-        background-color: $l-button-color;
-        background-image: -webkit-linear-gradient(top, $l-button-color, $l-button-color2);
-        background-image: linear-gradient(to bottom, $l-button-color, $l-button-color2);
-        border-radius: 4px;
-        color: #fff;
-        line-height: 50px;
-        -webkit-transition: none;
-        transition: none;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+color:#4b474d;
 }
 
 .large-button:hover {
