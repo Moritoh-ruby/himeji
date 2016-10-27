@@ -35,7 +35,7 @@
            </TR>  
         <% end %>
       </TABLE>
- <% else %>
+  <% else %>
     <h1>目標設定</h1>
         <%= form_tag('/regGoalMoney', name: "myForm", method: :post) do %>
             <p> 目標：
@@ -50,6 +50,5 @@
     
     <script src="js/bootstorap.min.js"></script>
   </div>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   </body>
 </html>
