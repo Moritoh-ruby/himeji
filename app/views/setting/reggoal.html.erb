@@ -13,19 +13,19 @@
     <h1>目標確認</h1>
       <TABLE border="1" align="left">
 	      <TR>
-		      <TH>状態</TH>
-		      <TH>目標</TH>
-          <TH>金額</TH>
+		      <TH bgcolor="#80ffff">状態</TH>
+		      <TH bgcolor="#80ffff">目標</TH>
+          <TH bgcolor="#80ffff">金額</TH>
 	      </TR>
         <% @goals.each do |goal| %>
 	      <TR>
           <% if goal.finish? %>
-            <TD>達成</TD>
+            <TD bgcolor="white">達成</TD>
           <% else %>
-            <TD>未達成</TD>
+            <TD bgcolor="yellow">未達成</TD>
           <% end %>
-		      <TD width="200" ><%=goal.buttonStr.to_s %></TD>
-		      <TD width="100"><%=goal.goalMoney.to_s %></TD>
+		      <TD width="200" bgcolor="white" ><%=goal.buttonStr.to_s %></TD>
+		      <TD width="100" bgcolor="white"><%=goal.goalMoney.to_s %></TD>
         </TR>  
         <% end %>
       </TABLE>
@@ -33,9 +33,9 @@
     <h1>目標設定</h1>
         <%= form_tag('/regGoalMoney', name: "myForm", method: :post) do %>
             <p> 目標：
-            <input type="text" name="txtGoal" maxlength='20'></p>
+            <input required type="text" name="txtGoal" maxlength='20'></p>
             <p> 目標金額：
-            <input type="number" name="money" maxlength='10' pattern="^[0-9]+$">円</p>
+            <input required type="text" name="money" maxlength='10' pattern="[1-9][0-9]*">円</p>
             <input type="submit" tabIndex="0" value = 設定する！！>
         <% end %> 
   <% end %>   
