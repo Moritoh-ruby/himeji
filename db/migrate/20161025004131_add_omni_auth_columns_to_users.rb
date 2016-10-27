@@ -1,4 +1,4 @@
-class AddColumnsToUsers < ActiveRecord::Migration
+class AddOmniAuthColumnsToUsers < ActiveRecord::Migration
   def change
     add_column :users, :provider, :string
   end
