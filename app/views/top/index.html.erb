@@ -23,7 +23,7 @@
          <span>00円のコーヒーを</span>
 
          <% if user_signed_in? && UserGoal.find_by(:user_id => current_user.id) %>
-         <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = <%= @usergoal.buttonStr %>為に飲んだつもりにする>
+         <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = 飲む代わりに<%= @usergoal.buttonStr %>為に使う>
          <% else %>
          <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = 飲んだつもりにする！！>
        <% end %>
