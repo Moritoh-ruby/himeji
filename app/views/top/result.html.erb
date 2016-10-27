@@ -18,15 +18,16 @@
   <%# 貯金額が0の場合はツイートボタンは非表示にする %>
   <div class="twitter">
     <a href="http://twitter.com/share?url=<%= @tweet_url %>&amp;text=<%= @tweet_text %><%= @tweet_hashtags %>"
-       class="twitter-share-button" data-lang="ja" data-size="large">
-      Twitterでシェア
+     class="twitter-share-button" data-lang="ja" data-size="large">
+
+     Twitterでシェア
     </a>
   </div>
   <% end %>
 
  <a class="twitter-timeline"  href="https://twitter.com/hashtag/%E3%81%97%E3%81%9F%E3%81%A4%E3%82%82%E3%82%8A%E8%B2%AF%E9%87%91" data-widget-id="785352546680352768">#したつもり貯金 のツイート</a>
 
- <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 <script>
   window.twttr = (function (d,s,id) {

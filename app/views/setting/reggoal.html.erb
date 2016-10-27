@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<l.goalMoney.to_s !DOCTYPE html>
 <html lang="ja">
   <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,6 +9,7 @@
   </head>
   <body>
   <div class="container">
+
   <% if current_user.user_goals.exists?(finish: false)  %>
     <h1>目標確認</h1>
       <TABLE border="1" align="left">
@@ -26,10 +27,15 @@
           <% end %>
 		      <TD width="200" ><%=goal.buttonStr.to_s %></TD>
 		      <TD width="100"><%=goal.goalMoney.to_s %></TD>
-        </TR>  
+          <TD> 
+<a href="https://twitter.com/share" class="twitter-share-button" data-text=<%=goal.buttonStr.to_s %> data-size="large"> Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+            </TD>
+           </TR>  
         <% end %>
       </TABLE>
-  <% else %>
+ <% else %>
     <h1>目標設定</h1>
         <%= form_tag('/regGoalMoney', name: "myForm", method: :post) do %>
             <p> 目標：
@@ -44,5 +50,6 @@
     
     <script src="js/bootstorap.min.js"></script>
   </div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   </body>
 </html>
