@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 gem 'devise'
 gem 'devise-i18n'
-
+gem 'omniauth', '~> 1.0.1'
+gem 'omniauth-twitter'
 # add_goal
 gem 'activerecord-import'
 
