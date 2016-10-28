@@ -1,4 +1,4 @@
-<l.goalMoney.to_s !DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -21,17 +21,17 @@
         <% @goals.each do |goal| %>
 	      <TR>
           <% if goal.finish? %>
-            <TD>達成</TD>
+            <TD bgcolor="white">達成</TD>
                       <TD width="200" ><%=goal.buttonStr.to_s %></TD>
                       <TD width="100" ><%=goal.goalMoney.to_s %></TD>
 
           <% else %>
-            <TD>未達成</TD>
+            <TD bgcolor="yellow">未達成</TD>
                       <TD width="200" ><%=goal.buttonStr.to_s %></TD>
                       <TD width="100" ><%=goal.goalMoney.to_s %></TD>                      
                       
                       <TD>
-<a href="cdhttps://twitter.com/share" class="twitter-share-button" data-text=<%=goal.buttonStr.to_s %>のに使いたいので<%=goal.goalMoney.to_s %>円貯めます！#したつもり貯金;#どや,#aiit_enpit data-url="https://goo.gl/D6RWc0"  data-size="large"> Tweet</a>
+<a href="cdhttps://twitter.com/share" class="twitter-share-button" data-text=<%=goal.buttonStr.to_s %>のに使いたいので<%=goal.goalMoney.to_s %>円貯めます！#したつもり貯金;#やるで,#aiit_enpit data-url="https://goo.gl/D6RWc0"  data-size="large"> Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
             </TD>
