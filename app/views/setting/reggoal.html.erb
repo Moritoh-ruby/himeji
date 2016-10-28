@@ -16,12 +16,21 @@
 	      <TR>
           <% if goal.finish? %>
             <TD class="goal-achieved">達成</TD>
-          <% else %>
-            <TD class="goal-trying">未達成</TD>
-          <% end %>
             <TD><%=goal.buttonStr.to_s %></TD>
             <TD><%=goal.goalMoney.to_s %></TD>
-        </TR>  
+
+          <% else %>
+            <TD class="goal-trying">未達成</TD>
+            <TD><%=goal.buttonStr.to_s %></TD>
+            <TD><%=goal.goalMoney.to_s %></TD>
+            <TD>
+<a href="cdhttps://twitter.com/share" class="twitter-share-button" data-text=<%=goal.buttonStr.to_s %>に使いたいので<%=goal.goalMoney.to_s %>円貯めます！#したつもり貯金.#やるで.#aiit_enpit  data-url="https://goo.gl/D6RWc0"  data-size="large"> Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+            </TD>
+
+          <% end %>
+           </TR>
         <% end %>
       </TABLE>
   <% else %>
