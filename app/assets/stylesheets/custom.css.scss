@@ -108,13 +108,19 @@ body {
 }
 
 .goal-money {
- width: 30%
+ width: 20%
 }
 
 .goal-achieved {
-  background-color: $goal-achieved;
+ /** background-color: $goal-achieved;**/
 }
 
 .goal-trying {
   background-color: $goal-trying;
 }
+
+.goal-tweet {
+  background-color: none;
+  width: 10%
+}
+
