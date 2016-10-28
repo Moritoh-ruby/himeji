@@ -1,44 +1,36 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$background-color:#33ccFF;
+$body-color:#111111;
+$jumbo-color:#111111;
+$l-button-color:#FF66FF;
+$l-button-color2:#ff0099;
+$l-button-color-hover:#1ab0ec;
+$l-button-color-hover2:#1ab0ec;
+
 body {
-        background-color: #33CCFF;        
-        background-image: image-url("money_chokinbako.png");
-        background-position:80%;
-        color: black; 
+        background-color:$background-color;        
+        background-image:image-url("money_chokinbako.png");
+        background-position:95%;
+        color: $body-color; 
         font-family: Meiryo, sans-serif;
 }
 .jumbotron{ 
        background-color: rgba(255,250,250,.50);
-      
-       background-repeat:no-repeat;
+       background-repeat:repeat-y;   
             
-       color:black;
+       color:$jumbo-color;
+}
+.navbar-default .navbar-nav > li > a {
+color:#4b474d;
 }
 
-.large-button {
-        border: 1px solid #15aeec;
-        background-color: #49c0f0;
-        background-image: -webkit-linear-gradient(top, #49c0f0, #2cafe3);
-        background-image: linear-gradient(to bottom, #49c0f0, #2cafe3);
-        border-radius: 4px;
-        color: #fff;
-        line-height: 50px;
-        -webkit-transition: none;
-        transition: none;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
-}
 .large-button:hover {
         border:1px solid #1090c3;
-        background-color: #1ab0ec;
-        background-image: -webkit-linear-gradient(top, #1ab0ec, #1a92c2);
-        background-image: linear-gradient(to bottom, #1ab0ec, #1a92c2);
-}
-.large-button:hover {
-        border:1px solid #1090c3;
-        background-color: #1ab0ec;
-        background-image: -webkit-linear-gradient(top, #1ab0ec, #1a92c2);
-        background-image: linear-gradient(to bottom, #1ab0ec, #1a92c2);
+        background-color: $l-button-color-hover;
+        background-image: -webkit-linear-gradient(top, $l-button-color-hover, $l-button-color-hover2);
+        background-image: linear-gradient(to bottom, $l-button-color-hover, $l-button-color-hover2);
 }
 
 .large-button:active {

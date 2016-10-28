@@ -17,7 +17,7 @@
 </head>
 <body>
 <header>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
 <div class="navbar-header">
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
 <span class="sr-only">メニュー</span>
@@ -41,6 +41,7 @@
 <%= current_user.email %>としてログインしています。 <%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
 <% else %>
 <li><%= link_to "ログイン", new_user_session_path, :class => 'post' %></li>
+<%= link_to "Sign in with Twitter", user_twitter_omniauth_authorize_path %>
 <li><%= link_to "新規登録", new_user_registration_path, :class => 'post' %></li>
 <% end %>
 </ul>
