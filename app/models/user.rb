@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,:omniauthable,omniauth_providers:[:twitter]
   has_many :user_goals, dependent: :destroy
+  has_many :endurances, dependent: :destroy
 
 def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :id => auth.uid).first

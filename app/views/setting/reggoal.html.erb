@@ -45,6 +45,20 @@
             000円</p>
             <input type="submit" tabIndex="0" value = 設定する！！ class="large-button">
         <% end %> 
-  <% end %>   
+  <% end %>  
+   <h1>したつもりにするもの</h1>
+        <% if current_user.endurances.exists? %>
+        <h2><%= @curent_endurance_text  %></h2>
+　　　　<% else %>
+      <h2>現在の設定：コーヒーを飲む</h2>
+        <% end %>
+        <%= form_tag('/endurance', name: "myForm", method: :post) do %>
+            <p> 設定内容：
+            <input required type="text" name="endurance" maxlength='20'></p>
+            <input type="submit" tabIndex="0" value = 設定する！！ class="large-button">
+        <% end %>
+
+
+ 
   </body>
 </html>

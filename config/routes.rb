@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 get '/setting'  => 'setting#reggoal'
 post '/regGoalMoney'  => 'setting#regGoalMoney'
+post '/endurance' => 'setting#create_endurance'
 
 devise_for :users, :controllers => {
   :sessions      => "users/sessions",
