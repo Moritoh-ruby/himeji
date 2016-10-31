@@ -1,15 +1,25 @@
+
 class UpdateController < ApplicationController
-   def update
-     UserGoal.find_by(:user_id => current_user.id)
-     @usergoal = current_user.id(buttonStr:params[:updateGoal].to_s ,goalMoney:params[:updatemoney].to_i)
-     respond_to do |format|
-    if @userGoal.update((buttonStr:params[:updateGoal]to_s, goalMoney:updatemoney)
-      format.html { redirect_to @usergoal, notice: '変更できました' } 
-    else
-     format.html { render action: '変更できません' } 
+   def update   
+     update = Current_user.user_goals.find(user_goals:params[:buttonStr].to_s)
+     updategoal = User_goals.update(buttonStr:params[:updategoal].to_s)   
+     update = updategoal
+     update.save 
+　end
+ 
+  def updatemoney　　
+ 　update1 = Current_user.user_goals.find(user_goals:params[:goalmoney].to_i)
+  updatemoney = User_goals.update(goalMoney:params[:updatemoney].to_i) 
+ 
+  if updatemoney > Current_user.total 
+  then
+  update1 = updatemoney 
+  update1.save
+  else
+   redirect to "/update"
   end
-
-end    
-
+  redirect to "/setting"
+  end
+end
 
 

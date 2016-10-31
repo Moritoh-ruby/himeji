@@ -6,25 +6,16 @@
   <body>
   <% if current_user.user_goals.exists?(finish: false)  %>
     <h1>目標確認</h1>
-<<<<<<< HEAD
-    <h2> <a href="/update" ><font size="6" color="red" > 変更します</font></a>
+  <h2> <a href="/update" ><font size="6" color="red" > 変更します</font></a>
     </h2>
-      <TABLE border="1" align="left">
-	      <TR>
-		      <TH bgcolor="#80ffff">状態</TH>
-		      <TH bgcolor="#80ffff">目標</TH>
-          <TH bgcolor="#80ffff">金額</TH>
-	      </TR>
-=======
-      <TABLE class="table goal-table">
+       <TABLE class="table goal-table">
        <TR>
          <TH class="goal-status">状態</TH>
          <TH class="goal-string">目標</TH>
          <TH class="goal-money">金額</TH>
          <TH class="goal-tweet" />
        </TR>
->>>>>>> origin/master
-        <% @goals.each do |goal| %>
+       <% @goals.each do |goal| %>
 	      <TR>
           <% if goal.finish? %>
             <TD class="goal-achieved">達成</TD>
@@ -56,6 +47,6 @@
             000円</p>
             <input type="submit" tabIndex="0" value = 設定する！！ class="large-button">
         <% end %> 
-  <% end %>   
+<% end %>
   </body>
 </html>
