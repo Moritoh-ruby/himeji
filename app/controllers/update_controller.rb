@@ -1,32 +1,15 @@
 class UpdateController < ApplicationController
-
-  def show
-    @user = User_goals.find(params[:user_id])
-  end
-    
-  def new
-    @user = User.new
-   end
-
-  def create
-    @user = User.new(new_params)
-    if @user.save
-      log_in @user
-      redirect_to @user
+   def update
+     UserGoal.find_by(:user_id => current_user.id)
+     @usergoal = current_user.id(buttonStr:params[:updateGoal].to_s ,goalMoney:params[:updatemoney].to_i)
+     respond_to do |format|
+    if @userGoal.update((buttonStr:params[:updateGoal]to_s, goalMoney:updatemoney)
+      format.html { redirect_to @usergoal, notice: '変更できました' } 
     else
-      render 'new'
-    end
+     format.html { render action: '変更できません' } 
   end
 
-  def edit
-    @user = User_goals.find(params[:user_id])
-  end
+end    
 
-  private
 
-    def user_params
-      params.require(:user).permit(:buttonStr, :goalMoney)
-    end
-
-end 
 
