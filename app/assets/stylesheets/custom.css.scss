@@ -1,13 +1,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$background-color:#33ccFF;
+$background-color:#002C6A;
 $body-color:#111111;
 $jumbo-color:#111111;
-$l-button-color:#FF66FF;
-$l-button-color2:#ff0099;
-$l-button-color-hover:#1ab0ec;
-$l-button-color-hover2:#1ab0ec;
+$l-button-border-color:#dd254d;
+$l-button-color:#E45171;
+$l-button-color2:#e13b5f;
+$l-button-color-hover:#e76783;
+$l-button-color-hover2:#eb7d95;
+
+/** Segging **/
+$light-yellow: #ffff94;
+$light-purple: #9494ff;
+$goal-trying: $light-yellow;
+$goal-achieved: $light-purple;
 
 body {
         background-color:$background-color;        
@@ -19,24 +26,37 @@ body {
 .jumbotron{ 
        background-color: rgba(255,250,250,.50);
        background-repeat:repeat-y;   
-            
        color:$jumbo-color;
 }
+
+/**
 .navbar-default .navbar-nav > li > a {
-color:#4b474d;
+**/
+
+.large-button {
+        border: 1px solid $l-button-border-color;
+        background-color: $l-button-color;
+        background-image: -webkit-linear-gradient(top, $l-button-color, $l-button-color2);
+        background-image: linear-gradient(to bottom, $l-button-color, $l-button-color2);
+        border-radius: 4px;
+        color: #fff;
+        line-height: 50px;
+        -webkit-transition: none;
+        transition: none;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
 }
 
 .large-button:hover {
-        border:1px solid #1090c3;
+        border:1px solid $l-button-border-color;
         background-color: $l-button-color-hover;
         background-image: -webkit-linear-gradient(top, $l-button-color-hover, $l-button-color-hover2);
         background-image: linear-gradient(to bottom, $l-button-color-hover, $l-button-color-hover2);
 }
 
 .large-button:active {
-        background: #1a92c2;
+        background: $l-button-color;
         box-shadow: inset 0 3px 5px rgba(0, 0, 0, .5);
-        color: #1679a1;
+        color: white;
         text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
 }
 .large-button {
@@ -63,3 +83,44 @@ color:#4b474d;
         -webkit-transition: all .3s;
         transition: all .3s;
 }	
+
+/* For result **/
+
+.red {
+ font-size: 21px;
+ font-weight: 600;
+ color: $l-button-color;
+}
+
+/** For setting goals**/
+.goal-table {
+ width: 70%;
+ background-color: white;
+ border: gray;
+}
+
+.goal-status {
+ width: 20%;
+}
+
+.goal-string {
+ width: 50%;
+}
+
+.goal-money {
+ width: 20%
+}
+
+.goal-achieved {
+ /** background-color: $goal-achieved;**/
+}
+
+.goal-trying {
+  background-color: $goal-trying;
+}
+
+.goal-tweet {
+  background-color: none;
+  width: 10%
+}
+

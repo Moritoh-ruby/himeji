@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <script type="text/javascript" src="javascript/test.js"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
   <body>
-  <div class="container">
   <% if current_user.user_goals.exists?(finish: false)  %>
     <h1>目標確認</h1>
+<<<<<<< HEAD
     <h2> <a href="/update" ><font size="6" color="red" > 変更します</font></a>
     </h2>
       <TABLE border="1" align="left">
@@ -19,34 +15,34 @@
 		      <TH bgcolor="#80ffff">目標</TH>
           <TH bgcolor="#80ffff">金額</TH>
 	      </TR>
+=======
+      <TABLE class="table goal-table">
+       <TR>
+         <TH class="goal-status">状態</TH>
+         <TH class="goal-string">目標</TH>
+         <TH class="goal-money">金額</TH>
+         <TH class="goal-tweet" />
+       </TR>
+>>>>>>> origin/master
         <% @goals.each do |goal| %>
 	      <TR>
           <% if goal.finish? %>
-            <TD bgcolor="white">達成</TD>
-                      <TD width="200" ><%=goal.buttonStr.to_s %></TD>
-                      <TD width="100" ><%=goal.goalMoney.to_s %></TD>
+            <TD class="goal-achieved">達成</TD>
+            <TD><%=goal.buttonStr.to_s %></TD>
+            <TD><%=goal.goalMoney.to_s %></TD>
+            <TD class="goal-tweet" />
 
           <% else %>
-            <TD bgcolor="yellow">未達成</TD>
-                      <TD width="200" ><%=goal.buttonStr.to_s %></TD>
-                      <TD width="100" ><%=goal.goalMoney.to_s %></TD>                      
-                      
-                      <TD>
-<a href="cdhttps://twitter.com/share" class="twitter-share-button" data-text=<%=goal.buttonStr.to_s %>に使いたいので<%=goal.goalMoney.to_s %>円貯めます！#したつもり貯金.#やるで.#aiit_enpit  data-url="https://goo.gl/D6RWc0"  data-size="large"> Tweet</a>
+            <TD class="goal-trying">未達成</TD>
+            <TD><%=goal.buttonStr.to_s %></TD>
+            <TD><%=goal.goalMoney.to_s %></TD>
+            <TD class="goal-tweet">
+<a href="cdhttps://twitter.com/share" class="twitter-share-button" data-text="<%=goal.buttonStr.to_s %>に使いたいので<%=goal.goalMoney.to_s %>円貯めます！ #したつもり貯金 #やるで #aiit_enpit"  data-url="https://goo.gl/D6RWc0"  data-size="small">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
             </TD>
 
           <% end %>
-
-                     
-		      
-         
-
-
-
-
-            
            </TR>
         <% end %>
       </TABLE>
@@ -56,14 +52,10 @@
             <p> 目標：
             <input required type="text" name="txtGoal" maxlength='20'></p>
             <p> 目標金額：
-            <input required type="text" name="money" maxlength='10' pattern="[1-9][0-9]*">円</p>
-            <input type="submit" tabIndex="0" value = 設定する！！>
+            <%= number_field_tag 'money', nil, min: 1, max: 50, step: 1, required: true %>
+            000円</p>
+            <input type="submit" tabIndex="0" value = 設定する！！ class="large-button">
         <% end %> 
   <% end %>   
-
-
-    
-    <script src="js/bootstorap.min.js"></script>
-  </div>
   </body>
 </html>
