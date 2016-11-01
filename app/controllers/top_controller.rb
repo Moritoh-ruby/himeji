@@ -14,7 +14,7 @@ class TopController < ApplicationController
   def result
 
      @total_before = params[:kane1].to_i*100
-     if current_user.endurances.exists?
+     if  user_signed_in? &&  current_user.endurances.exists?
      @current_record = Endurance.where(user_id:current_user.id).order("id desc").first
      @tweet_personal_temptation = @current_record.endurance
      else
