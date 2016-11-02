@@ -5,16 +5,23 @@ class TopController < ApplicationController
      if user_signed_in? && UserGoal.find_by(:user_id => current_user.id)
      @usergoal = UserGoal.where(user_id:current_user.id).order("id desc").first
      end
-     
+     if user_signed_in? &&  current_user.endurances.exists?
+     @current_record = Endurance.where(user_id:current_user.id).order("id desc").first
+     @current_endurance = @current_record.endurance
+     end
   end
 
   def result
 
      @total_before = params[:kane1].to_i*100
-
+     if  user_signed_in? &&  current_user.endurances.exists?
+     @current_record = Endurance.where(user_id:current_user.id).order("id desc").first
+     @tweet_personal_temptation = @current_record.endurance
+     else
      @tweet_personal_temptation = "コーヒーを飲む"
      @tweet_alternative_action = "節約します。"
-     
+     end
+
      if user_signed_in? then
        #DB更新処理
        @total_after = @total_before + current_user.total.to_i
