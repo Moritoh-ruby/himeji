@@ -37,15 +37,15 @@
 	    <li><a href="/setting">目標設定</a></li>  
 	<% end %> 
 <% end %>
+<% if user_signed_in? && current_user.name? %>
+<%= current_user.name %>としてログイン中です。
+
+<% elsif user_signed_in? %>
+ログイン中です。
+<% end %>
+
 <% if user_signed_in? %>
-<%
-=begin
-%>
-<%= current_user.email %>としてログインしています。 
-<%
-=end
-%>
-<%= current_user.name %>としてログイン中です。 
+  
 <%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
 <% else %>
 <li><%= link_to "ログイン", new_user_session_path, :class => 'post' %></li>
