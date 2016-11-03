@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head></head>
+<body>
+  <h1>目標の変更</h1>
+  <%= form_tag do  |t| %>
+    <p> 目標:
+    <input required type="text" name="UserGoals[:buttonStr]", maxlength= '20' %></p>
+    <p> 目標金額:
+    <%= number_field_tag "goalmoney",  nil, min: 1, max: 50, step: 1, required: true %> ,000円</p>
+  <% end %>
+  <input type ="submit" tabIndex="0" value ="変更します" class="large-button">
+</body> 
+
