@@ -45,7 +45,7 @@
 <%
 =end
 %>
-ログイン中です。 
+<%= current_user.name %>としてログイン中です。 
 <%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
 <% else %>
 <li><%= link_to "ログイン", new_user_session_path, :class => 'post' %></li>
