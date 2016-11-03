@@ -10,7 +10,7 @@ class SettingController < ApplicationController
 
   def regGoalMoney
     realMoney = params[:money].to_i * 1000
-    goal1 = current_user.user_goals.build(buttonStr:params[:txtGoal].to_s, goalMoney:realMoney, finish:false, total:0)
+    goal1 = current_user.user_goals.build(buttonStr:params[:txtGoal].to_s, goalMoney:realMoney, total:0)
     goal1.save
     redirect_to "/setting"
   end
