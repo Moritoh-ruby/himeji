@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class TopControllerTest < ActionController::TestCase
-  include Devise::Test::ControllerHelpers
+  #include Devise::Test::ControllerHelpers
 
   test 'unauthenticated users can GET result' do
     get :result
