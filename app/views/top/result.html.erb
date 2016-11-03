@@ -9,17 +9,19 @@
   <div>
   <% if user_signed_in? %>
   <p>今回：<%= @total_before %>円</p>
-  <p>合計貯金額：<%= @total_after %>円</p>
     <% if current_user.user_goals.exists? %>
       <% if current_user.user_goals.exists?(finish: false)  %>
-        <p>目標金額：<%= current_user.user_goals.find_by(finish: false).goalMoney %>円</p>
+        <% @current_goal = current_user.user_goals.find_by(finish: false)  %>
+        <p>目標金額：<%= @current_goal.goalMoney %>円</p>
+        <p>目標まであと：<%= @current_goal.goalMoney - @current_goal.total %>円</p>
       <% else %>
         <p>目標達成！！</p>
         <a href="/setting" class="red">おめでとうございます！新しい目標を設定してみましょう</a>
       <% end %>
     <% else %>
-      <a href="/setting" class="red">目標を設定してみましょう</a>
+        <a href="/setting" class="red">目標を設定してみましょう</a>
     <% end %>
+    <p>いままでの合計貯金額：<%= @total_after %>円</p>
   <% else %>
   <p>今回：<%= @total_before %>円</p>
   <p>ログインして合計貯金額を記録しましょう</p>
