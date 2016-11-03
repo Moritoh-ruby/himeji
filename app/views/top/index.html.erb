@@ -22,17 +22,16 @@
            <option>9</option>
          </select>
          <% if user_signed_in? &&  current_user.endurances.exists? %>
-         <span>00円の<%= @current_endurance %></span>
+           <span>00円を、<%= @current_endurance %>かわりに</span>
          <% else %>
-         <span>00円のコーヒーを飲む</span>
+           <span>00円を、コーヒーを飲むかわりに</span>
          <% end %> 
          <% if user_signed_in? && UserGoal.find_by(:user_id => current_user.id) %>
-         <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "かわりに<%= @usergoal.buttonStr %>に使う">
+           <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "<%= @usergoal.buttonStr %>に使う">
          <% else %>
-         <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "かわりに目標の為に使う">
-         </p>
-       <% end %>
-　　　　<% end %>
+           <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "目標の為に使う">
+         <% end %>
+　　　 <% end %>
 
  </body>
 </html>
