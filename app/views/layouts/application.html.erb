@@ -33,8 +33,14 @@
 <% if user_signed_in? %>
   <li><a href="/setting">設定</a></li>
 <% end %>
+<% if user_signed_in? && current_user.name? %>
+<%= current_user.name %>としてログイン中です。
+
+<% elsif user_signed_in? %>
+ログイン中です。
+<% end %>
+
 <% if user_signed_in? %>
-ログイン中です。 
 <%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
 <% else %>
 <li><%= link_to "ログイン", new_user_session_path, :class => 'post' %></li>

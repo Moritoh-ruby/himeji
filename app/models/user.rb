@@ -7,13 +7,14 @@ class User < ActiveRecord::Base
   has_many :endurances, dependent: :destroy
 
 def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
-    user = User.where(:provider => auth.provider, :id => auth.uid).first
+     user = User.where(:provider => auth.provider, :id => auth.uid).first
     unless user
       user = User.create(
                          provider: auth.provider,
                          id:      auth.uid,
                          email:    User.create_unique_email,
-                         password: Devise.friendly_token[0,20]
+                         password: Devise.friendly_token[0,20],
+                         name: auth.info.nickname
                         )
     end
     user
