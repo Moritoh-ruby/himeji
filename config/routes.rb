@@ -5,9 +5,10 @@ post '/regGoalMoney'  => 'setting#regGoalMoney'
 post '/endurance' => 'setting#create_endurance'
 resources :user_goal
 
-get '/update' => 'update#update'
+get '/edit' => 'update#edit'
 patch '/update' => 'update#update'
 put '/update' => 'update#update'
+post '/update' => 'update#update'
 
 devise_for :users, :controllers => {
   :sessions      => "users/sessions",
@@ -20,7 +21,7 @@ get '/'  => 'top#index'
 post '/result'  => 'top#result'
 get '/result' => 'top#result'
 
-  # The priority is based upon order of creation: first created -> highest priority.
+# The priority is based upon order of creation: first created -> highest priority.
 #index'
   # See how all your routes lay out with "rake routes".
 
