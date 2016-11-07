@@ -20,15 +20,15 @@
           <% if goal.finish? %>
             <TD class="goal-achieved">達成</TD>
             <TD><%=goal.buttonStr.to_s %></TD>
-            <TD><%=goal.goalMoney.to_s %></TD>
+            <TD><%=goal.goalMoney.to_i %></TD>
             <TD class="goal-tweet" />
 
           <% else %>
             <TD class="goal-trying">未達成</TD>
             <TD><%=goal.buttonStr.to_s %></TD>
-            <TD><%=goal.goalMoney.to_s %></TD>
+            <TD><%=goal.goalMoney.to_i %></TD>
             <TD class="goal-tweet">
-<a href="cdhttps://twitter.com/share" class="twitter-share-button" data-text="<%=goal.buttonStr.to_s %>に使いたいので<%=goal.goalMoney.to_s %>円貯めます！ #したつもり貯金 #やるで #aiit_enpit"  data-url="https://goo.gl/D6RWc0"  data-size="small">Tweet</a>
+<a href="cdhttps://twitter.com/share" class="twitter-share-button" data-text="<%=goal.buttonStr.to_s %>に使いたいので<%=goal.goalMoney.to_i %>円貯めます！ #したつもり貯金 #やるで #aiit_enpit"  data-url="https://goo.gl/D6RWc0"  data-size="small">Tweet</a>
 <script>
 if (typeof twttr === 'undefined') {
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
@@ -59,7 +59,7 @@ if (typeof twttr === 'undefined') {
         <h2><%= @curent_endurance_text  %></h2>
 　　　　<% else %>
       <h2>現在の設定：コーヒーを飲む</h2>
-        <% end %>:
+        <% end %>
         <%= form_tag('/endurance', name: "myForm", method: :post) do %>
             <p> 設定内容：
             <input required type="text" name="endurance" maxlength='20'></p>
