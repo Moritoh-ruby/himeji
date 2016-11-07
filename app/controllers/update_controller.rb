@@ -9,7 +9,7 @@ def update
   @user_goal.buttonStr = params[:buttonStr].to_s 
   @user_goal.goalMoney = params[:goalmoney].to_i
   
-if @user_goal.goalMoney > params[:total].to_i then
+if @user_goal.goalMoney > params[:total].to_i/1000 then
    @user_goal.save
    else
  redirect_to '/setting'
