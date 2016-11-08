@@ -10,10 +10,11 @@ def update
   @user_goal.goalMoney = params[:goalMoney].to_i
   
 if  @user_goal.goalMoney > params[:total].to_i/1000 then 
-    @user_goal.goalMoney.save   
-   else
-     redirect_to '/setting'
-   end
+    @user_goal.save
+    redirect_to '/setting'     
+  else    
+   render '/edit'
+end   
    
 end
 #private
