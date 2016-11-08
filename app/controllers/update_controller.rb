@@ -7,13 +7,13 @@ end
 def update
   @user_goal = UserGoal.find_by(user_id: current_user.id,finish: false)
   @user_goal.buttonStr = params[:user_goal][:buttonStr].to_s
-  @user_goal.goalMoney = params[:goalmoney].to_i
+  @user_goal.goalMoney = params[:goalMoney].to_i
   
-if @user_goal.goalMoney > params[:total].to_i/100 then
-   @user_goal.goalMoney.save
+if  @user_goal.goalMoney > params[:total].to_i/1000 then 
+    @user_goal.goalMoney.save   
    else
- redirect_to '/setting'
- end
+     redirect_to '/setting'
+   end
    
 end
 #private
