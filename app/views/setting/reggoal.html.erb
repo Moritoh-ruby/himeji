@@ -20,7 +20,7 @@
           <% if goal.finish? %>
             <TD class="goal-achieved">達成</TD>
             <TD><%=goal.buttonStr.to_s %></TD>
-            <TD><%=(goal.goalMoney.to_i) * 1000 %></TD>
+            <TD><%=goal.goalMoney.to_i %></TD>
             <TD class="goal-tweet" />
 
           <% else %>
