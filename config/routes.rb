@@ -4,7 +4,7 @@ get '/setting'  => 'setting#reggoal'
 post '/regGoalMoney'  => 'setting#regGoalMoney'
 post '/endurance' => 'setting#create_endurance'
 
-get '/edit' => 'update#edit'
+get '/edit' => 'users#edit'
 patch '/update' => 'update#update'
 put '/update' => 'update#update'
 post '/update' => 'update#update'
