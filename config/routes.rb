@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 get '/setting'  => 'setting#reggoal'
 post '/regGoalMoney'  => 'setting#regGoalMoney'
 post '/endurance' => 'setting#create_endurance'
-resources :user_goal
 
 get '/edit' => 'update#edit'
 patch '/update' => 'update#update'
