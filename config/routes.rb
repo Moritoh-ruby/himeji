@@ -21,7 +21,7 @@ get '/'  => 'top#index'
 post '/result'  => 'top#result'
 get '/result' => 'top#result'
 
-# The priority is ba:sed upon order of creation: first created -> highest priority.
+# The priority is based upon order of creation: first created -> highest priority.
 #index'
   # See how all your routes lay out with "rake routes".
 
