@@ -6,8 +6,7 @@
   <body>
   <% if current_user.user_goals.exists?(finish: false)  %>
     <h1>目標確認</h1>
-    <!-- <lavel><a herf="/update"><input type ="text" color="red" value= 変更 class="large-button"></a></lavel> -->
-    <a href="/edit">変更</a> 
+    
       <TABLE class="table goal-table">
        <TR>
          <TH class="goal-status">状態</TH>
@@ -28,8 +27,8 @@
             <TD><%=goal.buttonStr.to_s %></TD>
             <TD><%=goal.goalMoney.to_i %></TD>
             <TD class="goal-tweet">
-<a href="/update"><input type ="text" color="red" value= 変更 class="large-button"></a>
-<a href="cdhttps://twitter.com/share" class="twitter-share-button" data-text="<%=goal.buttonStr.to_s %>に使いたいので<%=goal.goalMoney.to_i %>円貯めます！ #したつもり貯金 #やるで #aiit_enpit"  data-url="https://goo.gl/D6RWc0"  data-size="small">Tweet</a>
+<TD><a href="/edit"><input type ="text" color="red" value= 変更 class="large-button"></a></TD>
+<TD><a href="cdhttps://twitter.com/share" class="twitter-share-button" data-text="<%=goal.buttonStr.to_s %>に使いたいので<%=goal.goalMoney.to_i %>円貯めます！ #したつもり貯金 #やるで #aiit_enpit"  data-url="https://goo.gl/D6RWc0"  data-size="small">Tweet</a></TD>
 <script>
 if (typeof twttr === 'undefined') {
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
