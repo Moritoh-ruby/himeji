@@ -6,6 +6,7 @@ post '/endurance' => 'setting#create_endurance'
 
 
 get '/edit' => 'update#edit'
+
 patch '/update' => 'update#update'
 put '/update' => 'update#update'
 post '/update' => 'update#update'
