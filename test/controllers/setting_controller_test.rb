@@ -8,4 +8,7 @@ class SettingControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test 'routing check' do
+    assert_generates '/setting', {:controller => 'setting', :action => 'reggoal'}
+  end
 end
