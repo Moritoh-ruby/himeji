@@ -1,7 +1,13 @@
 require 'test_helper'
 
 class TopControllerTest < ActionController::TestCase
-  
+   test 'routing check index' do
+   assert_generates '/', {:controller => 'top', :action => 'index'} 
+   end  
+
+   test 'routing check result' do
+   assert_generates '/result', {:controller => 'top', :action => 'result'}
+   end
 
   test 'unauthenticated users can GET result' do
     get :result
