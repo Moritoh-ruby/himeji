@@ -45,9 +45,9 @@ if (typeof twttr === 'undefined') {
       </TABLE>
   <% else %>
     <h1>目標設定</h1>
-        <%= form_tag('/regGoalMoney', name: "myForm", method: :post) do %>
+        <%= form_tag('/rgtr-goal-money', name: "my_form", method: :post) do %>
             <p> 目標：
-            <input required type="text" name="txtGoal" maxlength='20'></p>
+            <input required type="text" name="text_goal" maxlength='20'></p>
             <p> 目標金額：
             <%= number_field_tag 'money', nil, min: 1, max: 50, step: 1, required: true %>
             000円</p>
@@ -60,7 +60,7 @@ if (typeof twttr === 'undefined') {
 　　　　<% else %>
       <h2>現在の設定：コーヒーを飲む</h2>
         <% end %>
-        <%= form_tag('/endurance', name: "myForm", method: :post) do %>
+        <%= form_tag('/endurance', name: "my_form", method: :post) do %>
             <p> 設定内容：
             <input required type="text" name="endurance" maxlength='20'></p>
             <input type="submit" tabIndex="0" value = 設定する！！ class="large-button">

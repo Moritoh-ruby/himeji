@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-get '/setting'  => 'setting#reggoal'
-post '/regGoalMoney'  => 'setting#regGoalMoney'
+get '/setting'  => 'setting#rgtr_goal'
+post '/rgtr-goal-money'  => 'setting#rgtr_goal_money'
 post '/endurance' => 'setting#create_endurance'
 
 
