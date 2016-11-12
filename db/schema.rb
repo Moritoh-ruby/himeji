@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20161112064115) do
   end
 
   create_table "excuses", force: :cascade do |t|
-    t.integer  "user_id"
     t.string   "excuse"
     t.integer  "endurance_id"
     t.datetime "created_at",   null: false
