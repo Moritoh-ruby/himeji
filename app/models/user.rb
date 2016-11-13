@@ -31,4 +31,5 @@ def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
  end 
    has_many :endurance
  
+
 end
