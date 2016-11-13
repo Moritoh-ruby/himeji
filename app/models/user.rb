@@ -29,6 +29,6 @@ def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
   def self.create_unique_email
     User.create_unique_string + "@example.com"
  end 
-
-
+   has_many :endurance
+ 
 end
