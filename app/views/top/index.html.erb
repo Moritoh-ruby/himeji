@@ -28,10 +28,10 @@
          <% end %> 
          <% if user_signed_in? && UserGoal.find_by(:user_id => current_user.id) %>
            <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "<%= @usergoal.buttonStr %>に使う">
-         <% else %>
-           <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "目標の為に使う">
+         <% else %>          
+<input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "目標の為に使う">
          <% end %>
-　　　 <% end %>
+    <% end %>
 
  </body>
 </html>
