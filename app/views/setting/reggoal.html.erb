@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
 
-  <body>
   <% if current_user.user_goals.exists?(finish: false)  %>
     <h1>目標確認</h1>
     
@@ -64,7 +61,3 @@ if (typeof twttr === 'undefined') {
             <input type="submit" tabIndex="0" value = 設定する！！ class="large-button">
         <% end %>
 
-
- 
-  </body>
-</html>

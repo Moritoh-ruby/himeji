@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
+
   <h1>目標の変更</h1>
-</head>
-<body>
   <%= form_tag('/update', name: "myForm", method: :post) do %>
    <p>現在の貯金額は <%=@user_goal.total %>円</p>
    <p> 目標:
@@ -13,5 +9,3 @@
    <%= number_field_tag 'goalMoney', @user_goal.goalMoney/1000, min: @user_goal.total/1000+1, max: 50, step: 1, required: true %> ,000円</p>
     <input type ="submit" tabIndex="0" value ="変更します" class="large-button">
   <% end %>
-</body>
-</html>
