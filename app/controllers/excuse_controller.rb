@@ -1,17 +1,17 @@
 class ExcuseController < ApplicationController
 
 def create_excuse
-    @excuse.excuse = params[:my_excuse].to_s
-    @excuse.waste_money = params[:money].to_i * 1000
+    @excuse = Excuse.new(params[ :excuse])
+    #@excuse.excuse = params[:my_excuse].to_s
+    #@excuse.waste_money = params[:money].to_i * 1000
      
 if @excuse.save
 
-      redirect_to '/excuse' 
+      redirect_to '/setting' 
 
- else
+   else
 
-      render '/setting'
-end
-
-end
+      render '/excuse'
+   end
+ end
 end
