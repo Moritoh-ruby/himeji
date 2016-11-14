@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 get '/setting'  => 'setting#reggoal'
 post '/regGoalMoney'  => 'setting#regGoalMoney'
 post '/endurance' => 'setting#create_endurance'
-
+get '/excuse' => 'excuse#create_excuse'
 
 get '/edit' => 'update#edit'
 

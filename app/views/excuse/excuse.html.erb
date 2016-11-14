@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <h1>やめたい理由</h1>
+</head>
+<body>
+  <%= form_tag('/excuse', name: "my_excuse", method: :post) do %>
+   <p>現在の貯金額は <%=@user_goal.total %>円</p>
+   <p> いいわけ:
+  <%= text_field :excuse, :my_excuse,:maxlength=>"20" %></p>                 
+   <p> あきらめた金額: </p>
+  <%= number_field_tag 'waste_money', @user_goal.goalMoney/1000, min: @user_goal.total/1000+1, max: 50, step: 1, required: true %> ,000円</p>
+    <input type ="submit" tabIndex="0" value ="保存します" class="large-button">
+  <% end %>
+</body>
+</html>
+~
