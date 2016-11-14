@@ -4,7 +4,7 @@
   <h1>目標の変更</h1>
 </head>
 <body>
-  <%= form_tag('/update', name: "myForm", method: :post) do %>
+  <%= form_tag('/update', name: "my_form", method: :post) do %>
    <p>現在の貯金額は <%=@user_goal.total %>円</p>
    <p> 目標:
   <%= text_field :user_goal, :buttonStr,:maxlength=>"20" %></p>                   
