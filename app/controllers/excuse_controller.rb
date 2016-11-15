@@ -7,11 +7,11 @@ def create_excuse
      
 if @excuse.save
 
-      redirect_to '/setting' 
+      redirect_to @excuse 
 
    else
 
-      render '/excuse'
+      render '/setting'
    end
  end
 end
