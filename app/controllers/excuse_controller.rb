@@ -1,12 +1,12 @@
 class ExcuseController < ApplicationController
 
   def create_excuse
-    excuse = Excuse.new(excuse: "my_excuse", waste_money: "money1")
+    excuse = Excuse.new(excuse: "my_excuse")
  
     if excuse.save        
-    redirect_to '/setting' 
+    redirect_to '/excuse'
     else
-    render 'excuse'    
+    render 'new'    
     end
   end
 end
