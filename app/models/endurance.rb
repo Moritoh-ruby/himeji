@@ -1,4 +1,4 @@
 class Endurance < ActiveRecord::Base
   belongs_to :user
-  has_many :excuse
+  has_many :excuses
 end
