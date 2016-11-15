@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20161103083254) do
     t.integer  "total"
     t.boolean  "finish",               default: false, null: false
     t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "updated_at",                            null: false
   end
 
   create_table "users", id: :bigserial, force: :cascade do |t|
