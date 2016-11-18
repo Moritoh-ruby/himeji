@@ -4,13 +4,17 @@
   <h1>やめたい理由</h1>
 </head>
 <body>
-  <%= form_tag('/create_excuse', name: "my_excuse", method: :post) do %>
-   <p>現在の貯金額は     円</p>
+  <%= form_tag('/create_excuse, name: "my_form", method: :post) do %>
+ 
+  <%= form_tag('/show, method: :post) do %>
+
+ 
+<p>:あきらめた金額は<%= @excuse.waste_money %>円</p>
    <p> いいわけ:
-  </p>                 
-   <p> あきらめた金額: </p>
-      <input type ="submit" tabIndex="0" value ="保存します" class="large-button">
+    <%= @excuse.excuse %></p>               
+    <input type ="submit" tabIndex="0" value ="保存します" class="large-button">
   <% end %>
+<% end %>
 </body>
 </html>
 

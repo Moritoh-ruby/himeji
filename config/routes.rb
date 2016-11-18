@@ -5,9 +5,14 @@ post '/rgtr-goal-money'  => 'setting#rgtr_goal_money'
 post '/endurance' => 'setting#create_endurance'
 #post '/excuse' => 'excuse#create_excuse'
 #get '/excuse' => 'excuse#create_excuse'
-get '/create_excuse' => 'excuse#excuse'
-post'/create_excuse' => 'excuse#excuse'
- 
+#get '/create_excuse' => 'excuse#excuse'
+#post'/create_excuse' => 'excuse#excuse'
+get  '/create_excuse' => 'excuse#create_excuse'
+post '/create_excuse' => 'excuse#create_excuse' 
+
+get '/show'=> 'excuse#excuse'
+post '/show'=> 'excuse#excuse'
+
 get '/edit' => 'update#edit'
 
 patch '/update' => 'update#update'

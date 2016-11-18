@@ -1,12 +1,18 @@
 class ExcuseController < ApplicationController
-
-  def create_excuse
-    excuse = Excuse.create(excuse: "my_excuse")
  
-    if excuse.save        
-    redirect_to '/create_excuse'
-    else
-    render 'new'    
-    end
-  end
+  
+ def create_excuse
+   
+ @current_record = Endurance.where(user_id:current_user.id).order("id desc").first
+ @excuse = @current_record.excuses.create(excuse:params[:endurance_id])
+ redirect_to '/show'        
+ 
+   def show
+   @excuse= Excuse.find(params[:excuse , :waste_money])  
+   end 
+ end
+
+
 end
+
+

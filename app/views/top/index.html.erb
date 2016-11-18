@@ -32,10 +32,10 @@
            <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "目標の為に使う">
          <% end %>
       <% end %> 
-          <%= form_tag('/create_excuse', name: "my_excuse", method: :post) do %>
+          <%= form_tag('/create_excuse', name: "my_form", method: :post) do %>
         
            <p> いいわけ： 
- 　　　　<input requred type="text" name="excuse" maxlength="20" ></p>
+ 　　　　<input requred type="text" name="my_excuse" maxlength="20" ></p>
          <input type="submit" tabIndex="0" value= やめたい class="large-button">　
    
   <% end %>
