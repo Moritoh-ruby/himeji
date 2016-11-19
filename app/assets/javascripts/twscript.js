@@ -1,3 +1,5 @@
+
+
 !function (d, s, id)
 {
     var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
@@ -31,9 +33,15 @@ window.twttr = (function (d, s, id)
     });
 }
 (document, "script", "twitter-wjs")) // twitter callback
+
+if (typeof twttr !== 'undefined') {
 twttr.ready(function (twttr) 
 {
     twttr.events.bind('tweet', function (event) { });
-});
+});} 
 
-
+if (typeof twttr === 'undefined') {
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    }    else {
+  twttr.widgets.load();
+}
