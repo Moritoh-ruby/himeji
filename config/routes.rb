@@ -10,8 +10,8 @@ post '/endurance' => 'setting#create_endurance'
 get  '/create_excuse' => 'excuse#create_excuse'
 post '/create_excuse' => 'excuse#create_excuse' 
 
-get '/show'=> 'excuse#excuse'
-post '/show'=> 'excuse#excuse'
+#get '/show'=> 'excuse#show'
+#post '/show'=> 'excuse#show'
 
 get '/edit' => 'update#edit'
 
