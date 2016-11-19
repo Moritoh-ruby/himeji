@@ -6,15 +6,16 @@
 <body>
   <%= form_tag('/create_excuse, name: "my_form", method: :post) do %>
  
-  <%= form_tag('/show, method: :post) do %>
-
- 
+  <% @excuses.each do |excuse| %>
+<tr> 
 <p>:あきらめた金額は<%= @excuse.waste_money %>円</p>
    <p> いいわけ:
     <%= @excuse.excuse %></p>               
     <input type ="submit" tabIndex="0" value ="保存します" class="large-button">
   <% end %>
 <% end %>
+</tr>
 </body>
 </html>
+
 
