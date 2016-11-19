@@ -12,7 +12,10 @@ class ExcuseController < ApplicationController
  redirect_to '/show'       
  
   def show
-     
+ @excuse = Excuse.find(params[:endurances_id])
+ @my_excuse   = params[:excuse][:excuse].to_s
+ @waste_money = params[:waste_money].to_i
+    
   end 
  end
 end
