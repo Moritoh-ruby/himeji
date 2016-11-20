@@ -18,30 +18,20 @@
 <body>
 <header>
 <nav class="navbar navbar-default">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
-<span class="sr-only">メニュー</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-</div>
-
-<div id="gnavi" class="collapse navbar-collapse">
+<h2 class="logo"><a href="/"><img src="/assets/money_chokinbako.png" width="100" height="100" alt="したつもり貯金"></a></h1>
+<% if user_signed_in? && current_user.name? %>
+<li class="login"><%= current_user.name %>としてログイン中です。</li>
+<% elsif user_signed_in? %>
+<li class="login">ログイン中です。</li>
+<% end %>
 <ul class="nav navbar-nav">
 <li><a href="/">トップ</a></li>
 <% if user_signed_in? %>
-  <li><a href="/setting">設定</a></li>
-<% end %>
-<% if user_signed_in? && current_user.name? %>
-<%= current_user.name %>としてログイン中です。
-
-<% elsif user_signed_in? %>
-ログイン中です。
+<li><a href="/setting">設定</a></li>
 <% end %>
 
 <% if user_signed_in? %>
-<%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
+<li><%= link_to "ログアウト", destroy_user_session_path, :method => :delete %></li>
 <% else %>
 <li><%= link_to "ログイン", new_user_session_path, :class => 'post' %></li>
 <li><%= link_to "Twitterアカウントでログイン", user_twitter_omniauth_authorize_path %></li>
@@ -54,14 +44,11 @@
 %>
 <% end %>
 </ul>
-</div>
 </nav>
 </header>
 <article>
 <div class="jumbotron">
-<div class="container">
 <%= yield %>
-</div>
 </div>
 </article>
 </body>
