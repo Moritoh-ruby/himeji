@@ -4,7 +4,7 @@ jQuery(function() {
 
 $(function() {
     $('#excuse_trigger').click(function(){
-        $('#excuse_area').show();
+        $('#excuse_area').toggle();
     });
 
     $('#excuse_form').submit(function(){
