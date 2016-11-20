@@ -21,23 +21,13 @@
            <option>8</option>
            <option>9</option>
          </select>
-         <% if user_signed_in? &&  current_user.endurances.exists? %>
-           <span>00円を、<%= @current_endurance %>かわりに</span>
-         <% else %>
-           <span>00円を、コーヒーを飲むかわりに</span>
-         <% end %> 
-         <% if user_signed_in? && UserGoal.find_by(:user_id => current_user.id) %>
-           <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "<%= @usergoal.buttonStr %>に使う">
-         <% else %>          
-           <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "目標の為に使う">
-         <% end %>
-      <% end %> 
-          <%= form_tag('/create_excuse', name: "my_form", method: :post) do %>
-        
-           <p> いいわけ： 
- 　　　　<input requred type="text" name="my_form" maxlength="20" ></p>
-         <input type="submit" tabIndex="0" value= やめたい class="large-button">　
-   
-  <% end %>
+           <span>00円を</span>
+           <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "<%= @usergoal_text %>に使う">
+       <% end %> 
+       <%= form_tag('/create_excuse', name: "excuse_form", method: :post) do %>
+         <p> いいわけ： 
+ 　　　　  <input requred type="text" name="excuse" maxlength="20" ></p>
+           <input type="submit" tabIndex="0" value="<%= @endurance_button_text %>ために使う"  class="large-button">　
+       <% end %>
  </body>
 </html>
