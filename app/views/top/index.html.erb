@@ -1,8 +1,8 @@
     <h1>したつもり貯金</h1>
      <p> 金額：</p>
        <%= form_tag('/result', name: "my_form", method: :post) do %> 
-   
-         <select id="text" name="money1">
+       <div>
+         <select id="money1" name="money1">
            <option>1</option>
            <option>2</option>
            <option>3</option>
@@ -14,11 +14,17 @@
            <option>9</option>
          </select>
            <span>00円を</span>
-           <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "<%= @usergoal_text %>に使う">
+           </div>
+           <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "<%= @usergoal_button_text %>に使う">
        <% end %> 
 
-       <%= form_tag('/create_excuse', name: "excuse_form", method: :post) do %>
-         <p> いいわけ： 
- 　　　　  <input requred type="text" name="excuse" maxlength="20" ></p>
-           <input type="submit" tabIndex="0" value="<%= @endurance_button_text %>ために使う"  class="large-button">　
+       <%= form_tag('/create_excuse', name: "excuse_form", method: :post, id: "excuse_form") do %>
+         <input type="button" tabIndex="0" value="<%= @endurance_button_text %>ために使う" class="large-button" name="excuse_trigger" id="excuse_trigger">　
+ 　　　  <input type="text" name="waste_money" id="waste_money" class="hidden">
+         <div id="excuse_area">
+           <p> ちなみに、言い訳は？： 
+ 　　　      <input type="text" name="excuse" maxlength="50">
+           </p>
+           <input type="submit" tabIndex="0" value="言い訳を記録する" class="large-button">　
+         </div>
        <% end %>
