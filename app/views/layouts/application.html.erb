@@ -17,8 +17,9 @@
 </head>
 <body>
 <header>
+
 <nav class="navbar navbar-default">
-<h2 class="logo"><a href="/"><img src="/assets/money_chokinbako.png" width="100" height="100" alt="したつもり貯金"></a></h1>
+<h2 class="logo"><a href="/"><img src="<%= asset_path "money_chokinbako.png" %>" width="100" height="100" alt="したつもり貯金"></a></h1>
 <% if user_signed_in? && current_user.name? %>
 <li class="login"><%= current_user.name %>としてログイン中です。</li>
 <% elsif user_signed_in? %>
