@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <h1>目標の変更</h1>
-</head>
-<body>
+
+  <h1>目標の変更&nbsp;<button class="btn btn-info" data-container="body" data-toggle="popover" data-placement="top" data-html="true" data-content="設定する目標は、トップページとツイートに「〜に使う」というふうに表示されます。<br>「これに貢ぎたい」と思う目標にしてみましょう!<br>5万円まで設定できます。"><i class="glyphicon glyphicon-info-sign"></i></button></h1>
   <%= form_tag('/update', name: "my_form", method: :post) do %>
    <p>現在の貯金額は <%=@user_goal.total %>円</p>
    <p> 目標:
@@ -13,5 +9,3 @@
    <%= number_field_tag 'goalMoney', @user_goal.goalMoney/1000, min: @user_goal.total/1000+1, max: 50, step: 1, required: true %> ,000円</p>
     <input type ="submit" tabIndex="0" value ="変更します" class="large-button">
   <% end %>
-</body>
-</html>

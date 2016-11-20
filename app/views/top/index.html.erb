@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  </head>
-  <body>
-
     <h1>したつもり貯金</h1>
      <p> 金額：</p>
        <%= form_tag('/result', name: "my_form", method: :post) do %> 
@@ -24,10 +16,9 @@
            <span>00円を</span>
            <input type="submit" class="large-button" tabIndex="0" id="twitter_button" value = "<%= @usergoal_text %>に使う">
        <% end %> 
+
        <%= form_tag('/create_excuse', name: "excuse_form", method: :post) do %>
          <p> いいわけ： 
  　　　　  <input requred type="text" name="excuse" maxlength="20" ></p>
            <input type="submit" tabIndex="0" value="<%= @endurance_button_text %>ために使う"  class="large-button">　
        <% end %>
- </body>
-</html>
