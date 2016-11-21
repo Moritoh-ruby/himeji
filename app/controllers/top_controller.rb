@@ -3,11 +3,17 @@ class TopController < ApplicationController
   def index
      #サインインしていて、現在のユーザーのuser_idがUserGoalにあった場合の処理
      if user_signed_in? && UserGoal.find_by(:user_id => current_user.id)
-     @usergoal = UserGoal.where(user_id:current_user.id).order("id desc").first
+       @usergoal = UserGoal.where(user_id:current_user.id).order("id desc").first
+       @usergoal_button_text = @usergoal.buttonStr
+     else
+       @usergoal_button_text = "好きなこと"
      end
+ 
      if user_signed_in? &&  current_user.endurances.exists?
-     @current_record = Endurance.where(user_id:current_user.id).order("id desc").first
-     @current_endurance = @current_record.endurance
+       @current_record = Endurance.where(user_id:current_user.id).order("id desc").first
+       @endurance_button_text = @current_record.endurance
+     else
+       @endurance_button_text = "コーヒーを飲む"
      end
   end
 

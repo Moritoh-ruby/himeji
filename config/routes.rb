@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 get '/setting'  => 'setting#rgtr_goal'
 post '/rgtr-goal-money'  => 'setting#rgtr_goal_money'
 post '/endurance' => 'setting#create_endurance'
-
+get  '/create_excuse' => 'excuse#create_excuse'
+post '/create_excuse' => 'excuse#create_excuse' 
 
 get '/edit' => 'update#edit'
 
@@ -78,3 +79,4 @@ get '/result' => 'top#result'
   #     resources :products
   #   end
 end
+
