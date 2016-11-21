@@ -1,0 +1,54 @@
+
+  <% if current_user.user_goals.exists?(finish: false)  %>
+    <h1>目標確認</h1>
+      <TABLE class="table goal-table">
+       <TR>
+         <TH class="goal-status">状態</TH>
+         <TH class="goal-string">目標</TH>
+         <TH class="goal-money">金額</TH>
+         <TH class="goal-tweet" />
+       </TR>
+        <% @goals.each do |goal| %>
+	      <TR>
+          <% if goal.finish? %>
+            <TD class="goal-achieved">達成</TD>
+            <TD><%=goal.buttonStr.to_s %></TD>
+            <TD><%=goal.goalMoney.to_i %></TD>
+            <TD class="goal-tweet" />
+
+          <% else %>
+            <TD class="goal-trying">未達成</TD>
+            <TD><%=goal.buttonStr.to_s %></TD>
+            <TD><%=goal.goalMoney.to_i %></TD>
+            <TD class="goal-tweet"/>
+<TD><a href="/edit" class="large-button large-button-a" >変更</a></TD>
+<TD><a href="cdhttps://twitter.com/share" class="twitter-share-button" data-text="<%=goal.buttonStr.to_s %>に使いたいので<%=goal.goalMoney.to_i %>円貯めます！ #したつもり貯金 #やるで #aiit_enpit"  data-url="https://goo.gl/D6RWc0"  data-size="small">Tweet</a></TD>
+
+            </TD>
+
+          <% end %>
+           </TR>
+        <% end %>
+      </TABLE>
+  <% else %>
+    <h1>目標設定&nbsp;<button class="btn btn-info" data-container="body" data-toggle="popover" data-placement="top" data-html="true" data-content="設定する目標は、トップページとツイートに「〜に使う」というふうに表示されます。<br>「これに貢ぎたい」と思う目標にしてみましょう!<br>5万円まで設定できます。"><i class="glyphicon glyphicon-info-sign"></i></button></h1>
+        <%= form_tag('/rgtr-goal-money', name: "myForm", method: :post) do %>
+            <p> 目標：
+            <input required type="text" name="text_goal" maxlength='20'></p>
+            <p> 目標金額：
+            <%= number_field_tag 'money', nil, min: 1, max: 50, step: 1, required: true %>
+            000円</p>
+            <input type="submit" tabIndex="0" value = 設定する！！ class="large-button">
+        <% end %> 
+  <% end %>  
+   <h1>やめたいこと&nbsp;<button class="btn btn-info" data-container="body" data-toggle="popover" data-placement="top" data-html="true" data-content="つい無駄遣いしてしまうことを登録しましょう。<br>動詞で終わるといい感じです！"><i class="glyphicon glyphicon-info-sign"></i></button></h1>
+        <% if current_user.endurances.exists? %>
+        <h2><%= @curent_endurance_text  %></h2>
+　　　　<% else %>
+      <h2>現在の設定：コーヒーを飲む</h2>
+        <% end %>
+        <%= form_tag('/endurance', name: "myForm", method: :post) do %>
+            <p> 設定内容：
+            <input required type="text" name="endurance" maxlength='20'></p>
+            <input type="submit" tabIndex="0" value = 設定する！！ class="large-button">
+        <% end %>

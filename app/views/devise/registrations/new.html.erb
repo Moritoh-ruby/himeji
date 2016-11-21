@@ -1,3 +1,6 @@
+<%
+=begin
+%>
 <h2>登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -27,3 +30,13 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<%
+=end
+%>
+<div class="row">
+  <div class="devise-notice">
+    <p>メールアドレスによる新規登録は終了しました。Twitterアカウントでのログインをご利用ください。</p>
+    <p>メールアドレスでご登録いただいた情報は2016年11月末に削除します。Twitterアカウントへのデータ引き継ぎはできません（ごめんなさい！）</p>
+  </div>
+  <%= render "devise/shared/links" %>
+</div>

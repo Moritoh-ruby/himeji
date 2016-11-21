@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
 
-get '/setting'  => 'setting#reggoal'
-post '/regGoalMoney'  => 'setting#regGoalMoney'
+get '/setting'  => 'setting#rgtr_goal'
+post '/rgtr-goal-money'  => 'setting#rgtr_goal_money'
+post '/endurance' => 'setting#create_endurance'
+get  '/create_excuse' => 'excuse#create_excuse'
+post '/create_excuse' => 'excuse#create_excuse' 
+
+get '/edit' => 'update#edit'
+
+patch '/update' => 'update#update'
+put '/update' => 'update#update'
+post '/update' => 'update#update'
 
 devise_for :users, :controllers => {
   :sessions      => "users/sessions",
@@ -14,7 +23,7 @@ get '/'  => 'top#index'
 post '/result'  => 'top#result'
 get '/result' => 'top#result'
 
-  # The priority is based upon order of creation: first created -> highest priority.
+# The priority is based upon order of creation: first created -> highest priority.
 #index'
   # See how all your routes lay out with "rake routes".
 
@@ -70,3 +79,4 @@ get '/result' => 'top#result'
   #     resources :products
   #   end
 end
+

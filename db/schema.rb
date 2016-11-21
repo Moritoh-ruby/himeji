@@ -11,19 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026020729) do
+ActiveRecord::Schema.define(version: 20161112064115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "endurances", force: :cascade do |t|
+    t.integer  "user_id",    limit: 8
+    t.string   "endurance"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "excuses", force: :cascade do |t|
+    t.string   "excuse"
+    t.integer  "endurance_id"
+    t.integer  "waste_money"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "user_goals", force: :cascade do |t|
     t.integer  "user_id",    limit: 8
     t.string   "buttonStr"
     t.integer  "goalMoney"
     t.integer  "total"
-    t.boolean  "finish"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.boolean  "finish",               default: false, null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "users", id: :bigserial, force: :cascade do |t|
@@ -41,6 +56,7 @@ ActiveRecord::Schema.define(version: 20161026020729) do
     t.datetime "updated_at",                          null: false
     t.string   "total"
     t.string   "provider"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,5 +1,12 @@
 <h2>ログイン</h2>
 
+<div class="row">
+  <div class="devise-notice">
+    <p>メールアドレスによるログインは2016年11月中旬で終了します。Twitterアカウントでのログインをご利用ください。</p>
+    <p>メールアドレスでご登録いただいた情報は2016年11月末に削除します。Twitterアカウントへのデータ引き継ぎはできません（ごめんなさい！）</p>
+  </div>
+</div>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
