@@ -41,7 +41,7 @@ body {
 
 @media screen and (min-width: 0px) and (max-width : 767px){
     * {
-        font-size:25px;
+        font-size:10px;
     }
     h1,h2 {
         font-size: 1.5em;
@@ -60,30 +60,42 @@ body {
     }
 }
 
-li.login {
-    text-align: right;
-    list-style: none;
+.login {
+  width: 100%;
+  margin-left: auto;
 }
 
 h2.logo {
     text-align: center;
 }
 
-@media screen and (min-width: 768px) and (max-width : 991px){
-    * {
-        font-size:25px;
-    }
-    .copyright{
-        font-size:14px;
-    }
-    p.story  {
-        font-size:14px;
-        line-height: 1.8;
-    }
+  
+.navbar ul{  
+  list-style-type: none;  
+  margin: 0;  
+  padding: 0;  
+}  
+  
+.navbar li{  
+  float: left;  
+  width: 100px;  
+  margin: 20px 0px 0px 0px;  
+  padding: 0;  
+}  
+  
+.navbar a{  
+  text-align: center;  
+  display:block;  
+  padding: 0.5em 0;  
+  width:100%;  
+  color:#000000;  
+}  
+  
+.navbar a:hover{  
+  color: #ffffff;  
+}  
 
-}
-
-@media screen and (min-width : 992px) {
+@media screen and (min-width : 768px) {
     * {
         font-size:16px;
     }
