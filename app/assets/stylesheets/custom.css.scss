@@ -47,6 +47,10 @@ h2.logo {
   width: 100%;
 }
   
+.navbar {
+  padding: 0 8px;  
+}
+
 .navbar ul{  
   list-style-type: none;  
   margin: 0;  
@@ -55,7 +59,6 @@ h2.logo {
   
 .navbar li{  
   float: left;  
-  width: 190px;  
   margin: 0;  
   padding: 0;  
 }  
@@ -64,7 +67,6 @@ h2.logo {
   text-align: center;  
   display:block;  
   padding: 0.5em 0;  
-  width:100%;  
   color:#000000;  
 }  
   
@@ -207,7 +209,6 @@ h2.logo {
    }
    .navbar li{  
      float: left;  
-     width: 130px;  
      margin: 0px;  
      padding: 0;  
    }  
