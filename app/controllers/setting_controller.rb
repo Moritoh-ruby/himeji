@@ -1,10 +1,12 @@
 class SettingController < ApplicationController
   def rgtr_goal
-    @goals = current_user.user_goals.all.order("finish asc")
-    if user_signed_in? &&  current_user.endurances.exists?
-    @current_record = Endurance.where(user_id:current_user.id).order("id desc").first
-    @current_endurance = @current_record.endurance
-    @curent_endurance_text = "現在の設定："+ @current_endurance
+    if user_signed_in? 
+      @goals = current_user.user_goals.all.order("finish asc")
+      if current_user.endurances.exists?
+        @current_record = Endurance.where(user_id:current_user.id).order("id desc").first
+        @current_endurance = @current_record.endurance
+        @curent_endurance_text = "現在の設定："+ @current_endurance
+      end
     end
   end
 
