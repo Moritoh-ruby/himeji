@@ -34,70 +34,46 @@ body {
        color:$jumbo-color;
 }
 
-/**
-.navbar-default .navbar-nav > li > a {
-**/
-/* レスポンシブのフォントサイズ指定 */
-
-@media screen and (min-width: 0px) and (max-width : 767px){
-    * {
-        font-size:25px;
-    }
-    h1,h2 {
-        font-size: 1.5em;
-    }
-    h3,h4 {
-        font-size: 1.3em;
-    }
-    p,div, .panel-title, .form-control {
-        font-size: 1em;
-    }
-    p.story  {
-        font-size: 1.0em;
-    }
-    .copyright{
-        font-size: 0.7em;
-    }
-}
-
-li.login {
-    text-align: right;
-    list-style: none;
+.login {
+  margin-left: auto;
+  text-align: right;
+  float: right;
 }
 
 h2.logo {
     text-align: center;
 }
 
-@media screen and (min-width: 768px) and (max-width : 991px){
-    * {
-        font-size:25px;
-    }
-    .copyright{
-        font-size:14px;
-    }
-    p.story  {
-        font-size:14px;
-        line-height: 1.8;
-    }
-
+.navbar-nav {
+  width: 100%;
+}
+  
+.navbar {
+  padding: 0 8px;  
 }
 
-@media screen and (min-width : 992px) {
-    * {
-        font-size:16px;
-    }
-    .copyright{
-        font-size:18px;
-    }
-    p.story  {
-        font-size:18px;
-        line-height: 1.8;
-    }
-
-}
-
-
+.navbar ul{  
+  list-style-type: none;  
+  margin: 0;  
+  padding: 0;  
+}  
+  
+.navbar li{  
+  float: left;  
+  margin: 0;  
+  padding: 0;  
+}  
+  
+.navbar a{  
+  text-align: center;  
+  display:block;  
+  padding: 0.5em 0;  
+  color:#000000;  
+}  
+  
+.navbar a:hover{  
+  color: #ffffff;  
+}  
 
 .large-button {
         border: 1px solid $l-button-border-color;
@@ -203,9 +179,53 @@ h2.logo {
 }
 
 
+/* レスポンシブのフォントサイズ指定 */
+
+@media screen and (min-width: 0px) and (max-width : 767px){
+    * {
+        font-size:10px;
+    }
+    h1,h2 {
+        font-size: 1.5em;
+    }
+    h3,h4 {
+        font-size: 1.3em;
+    }
+    p,div, .panel-title, .form-control {
+        font-size: 1em;
+    }
+    p.story  {
+        font-size: 1.0em;
+    }
+    .copyright{
+        font-size: 0.7em;
+    }
+    img.logo-img{
+        width: 12%;
+        height: 12%;
+    }
+    h2.logo {
+    margin: 0px;
+   }
+   .navbar li{  
+     float: left;  
+     margin: 0px;  
+     padding: 0;  
+     height: 30px;
+   }  
+}
 
 
+@media screen and (min-width : 768px) {
+    * {
+        font-size:16px;
+    }
+    .copyright{
+        font-size:18px;
+    }
+    p.story  {
+        font-size:18px;
+        line-height: 1.8;
+    }
 
-
-
-
+}
