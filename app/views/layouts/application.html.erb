@@ -24,25 +24,15 @@
     <ul class="nav navbar-nav">
   <% if user_signed_in? %>
       <li><a href="/setting">設定</a></li>
-  <% end %>
-  
-  <% if user_signed_in? %>
       <li><%= link_to "ログアウト", destroy_user_session_path, :method => :delete %></li>
   <% else %>
       <li><%= link_to "ログイン", new_user_session_path, :class => 'post' %></li>
       <li><%= link_to "Twitterアカウントでログイン", user_twitter_omniauth_authorize_path %></li>
   <% end %>
   <% if user_signed_in? && current_user.name? %>
-    <li class="login"><%= current_user.name %>としてログイン中です。</li>
+    <span class="login"><%= current_user.name %>として<br>ログイン中です</span>
   <% elsif user_signed_in? %>
-    <li class="login">ログイン中です。</li>
-<%
-=begin
-%>
-<li><%= link_to "新規登録", new_user_registration_path, :class => 'post' %></li>
-<%
-=end
-%>
+    <span class="login">ログイン中です</span>
   <% end %>
   </ul>
   </nav>
