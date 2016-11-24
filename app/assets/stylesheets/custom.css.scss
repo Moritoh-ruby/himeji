@@ -34,32 +34,6 @@ body {
        color:$jumbo-color;
 }
 
-/**
-.navbar-default .navbar-nav > li > a {
-**/
-/* レスポンシブのフォントサイズ指定 */
-
-@media screen and (min-width: 0px) and (max-width : 767px){
-    * {
-        font-size:10px;
-    }
-    h1,h2 {
-        font-size: 1.5em;
-    }
-    h3,h4 {
-        font-size: 1.3em;
-    }
-    p,div, .panel-title, .form-control {
-        font-size: 1em;
-    }
-    p.story  {
-        font-size: 1.0em;
-    }
-    .copyright{
-        font-size: 0.7em;
-    }
-}
-
 .login {
   width: 100%;
   margin-left: auto;
@@ -69,6 +43,9 @@ h2.logo {
     text-align: center;
 }
 
+.navbar-nav {
+  width: 100%;
+}
   
 .navbar ul{  
   list-style-type: none;  
@@ -78,8 +55,8 @@ h2.logo {
   
 .navbar li{  
   float: left;  
-  width: 100px;  
-  margin: 20px 0px 0px 0px;  
+  width: 190px;  
+  margin: 0;  
   padding: 0;  
 }  
   
@@ -94,22 +71,6 @@ h2.logo {
 .navbar a:hover{  
   color: #ffffff;  
 }  
-
-@media screen and (min-width : 768px) {
-    * {
-        font-size:16px;
-    }
-    .copyright{
-        font-size:18px;
-    }
-    p.story  {
-        font-size:18px;
-        line-height: 1.8;
-    }
-
-}
-
-
 
 .large-button {
         border: 1px solid $l-button-border-color;
@@ -215,9 +176,54 @@ h2.logo {
 }
 
 
+/* レスポンシブのフォントサイズ指定 */
+
+@media screen and (min-width: 0px) and (max-width : 767px){
+    * {
+        font-size:10px;
+    }
+    h1,h2 {
+        font-size: 1.5em;
+    }
+    h3,h4 {
+        font-size: 1.3em;
+    }
+    p,div, .panel-title, .form-control {
+        font-size: 1em;
+    }
+    p.story  {
+        font-size: 1.0em;
+    }
+    .copyright{
+        font-size: 0.7em;
+    }
+    img.logo-img{
+        width: 12%;
+        height: 12%;
+    }
+    h2.logo {
+    margin-top: 5px;
+    margin-bottom: 5px;
+   }
+   .navbar li{  
+     float: left;  
+     width: 130px;  
+     margin: 0px;  
+     padding: 0;  
+   }  
+}
 
 
+@media screen and (min-width : 768px) {
+    * {
+        font-size:16px;
+    }
+    .copyright{
+        font-size:18px;
+    }
+    p.story  {
+        font-size:18px;
+        line-height: 1.8;
+    }
 
-
-
-
+}

@@ -20,7 +20,7 @@
 
   <header>
   <nav class="navbar navbar-default">
-  <h2 class="logo"><a href="/"><img src="<%= asset_path "money_chokinbako.png" %>" width="80" height="80" alt="したつもり貯金"></a></h2>
+  <h2 class="logo"><a href="/"><img src="<%= asset_path "money_chokinbako.png" %>" width="80" height="80" alt="したつもり貯金" class="logo-img"></a></h2>
     <ul class="nav navbar-nav">
   <% if user_signed_in? %>
       <li><a href="/setting">設定</a></li>
@@ -36,8 +36,6 @@
     <li class="login"><%= current_user.name %>としてログイン中です。</li>
   <% elsif user_signed_in? %>
     <li class="login">ログイン中です。</li>
-  
-    <ul class="n
 <%
 =begin
 %>
@@ -49,7 +47,6 @@
   </ul>
   </nav>
   </header>
-
 
 <div class="container">
   <div class="jumbotron">
