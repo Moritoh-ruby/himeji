@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  width: 96%;
+  width: 98%;
 }
 
 .jumbotron{ 
@@ -160,10 +160,6 @@ h2.logo {
  width: 30%
 }
 
-.goal-achieved {
- /** background-color: $goal-achieved;**/
-}
-
 .goal-trying {
   background-color: $goal-trying;
 }
@@ -171,6 +167,12 @@ h2.logo {
 .goal-tweet {
   background-color: none;
   width: 10%
+}
+
+.validation-msg {
+  color: red;
+  vertical-align: middle;
+  font-weight: 600;
 }
 
 /** devise **/
