@@ -1,13 +1,11 @@
-
   <h1>目標の変更&nbsp;<button class="btn btn-info" data-container="body" data-toggle="popover" data-placement="top" data-html="true" data-content="設定する目標は、トップページとツイートに「〜に使う」というふうに表示されます。<br>「これに貢ぎたい」と思う目標にしてみましょう!<br>5万円まで設定できます。"><i class="glyphicon glyphicon-info-sign"></i></button></h1>
-  <%= form_tag('/update', name: "my_form", method: :post) do %>
+  <%= form_tag('/update', name: "my_form", method: :post, id: "update_form") do %>
    <p>現在の貯金額は <%=@user_goal.total %>円</p>
-   <p> 目標:
-  <%= text_field :user_goal, :buttonStr,:maxlength=>"20" %></p>                   
-   <p> 目標金額: </p>
-         
- <p><%= number_field_tag 'goalMoney', @user_goal.goalMoney/1000, min: @user_goal.total/1000+1, max: 50, step: 1, required: true %> ,000円</p>
- 
- <P> 現在の貯金額よりも少ない目標金額は設定できません</p>
-  <input type ="submit" tabIndex="0" value ="変更します" class="large-button">
+   <p> 目標:<span id="update-text-validation-msg" class="validation-msg"></span><br>
+   <%= text_field :user_goal, :buttonStr,:maxlength=>"20", required: true, id: "goal-update-text" %></p>                   
+   <p> 目標金額: <span id="update-money-validation-msg" class="validation-msg"></span><br>
+   <%= number_field_tag 'goalMoney', @user_goal.goalMoney/1000, min: @user_goal.total/1000+1, max: 50, step: 1, required: true, id: "goal-update-money" %> ,000円</p>
+   <P> 現在の貯金額よりも少ない目標金額は設定できません</p>
+   <input type="number" value="<%= @user_goal.total/1000 + 1 %>" id="current-saving" class="hidden">
+   <input type ="submit" tabIndex="0" value ="変更する！！" class="large-button">
   <% end %>
