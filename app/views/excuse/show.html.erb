@@ -1,6 +1,9 @@
 
 <h1>誘惑にまけちゃったタイミング一覧</h1>
 
-<p> <%= @current_excuse %> </p>
+<p> <%= @current_excuse.each do |excuse| %> </p>
  
+<td><%= excuse.excuse %> </td>
+
+<% end %>
 
