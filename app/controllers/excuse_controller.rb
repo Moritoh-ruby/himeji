@@ -15,4 +15,11 @@ class ExcuseController < ApplicationController
       end
     end
   end
+ 
+  def show
+     current_record = Endurance.where(user_id:current_user.id).order("id desc").first
+    @current_excuse = current_record.excuses.order(created_at: :desc).limit(10)
+   
+ end
+
 end
