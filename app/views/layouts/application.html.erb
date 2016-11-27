@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>したつもり貯金</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,54 +17,35 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-<header>
-<nav class="navbar navbar-default">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
-<span class="sr-only">メニュー</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-</div>
 
-<div id="gnavi" class="collapse navbar-collapse">
-<ul class="nav navbar-nav">
-<li><a href="/">トップ</a></li>
-<% if user_signed_in? %>
-  <li><a href="/setting">設定</a></li>
-<% end %>
-<% if user_signed_in? && current_user.name? %>
-<%= current_user.name %>としてログイン中です。
+  <header>
+  <nav class="navbar navbar-default">
+  <h2 class="logo"><a href="/"><img src="<%= asset_path "money_chokinbako.png" %>" width="80" height="80" alt="したつもり貯金" class="logo-img"></a></h2>
+    <ul class="nav navbar-nav">
+  <% if user_signed_in? %>
+      <li><a href="/setting">設定</a></li>
+      <li><%= link_to "ログアウト", destroy_user_session_path, :method => :delete %></li>
+  <% else %>
+      <li><%= link_to "ログイン", new_user_session_path, :class => 'post' %></li>
+      <li><%= link_to "Twitterアカウントでログイン", user_twitter_omniauth_authorize_path %></li>
+  <% end %>
+  <% if user_signed_in? && current_user.name? %>
+    <span class="login"><%= current_user.name %>として<br>ログイン中です</span>
+  <% elsif user_signed_in? %>
+    <span class="login">ログイン中です</span>
+  <% end %>
+  </ul>
+  </nav>
+  </header>
 
-<% elsif user_signed_in? %>
-ログイン中です。
-<% end %>
-
-<% if user_signed_in? %>
-<%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
-<% else %>
-<li><%= link_to "ログイン", new_user_session_path, :class => 'post' %></li>
-<li><%= link_to "Twitterアカウントでログイン", user_twitter_omniauth_authorize_path %></li>
-<%
-=begin
-%>
-<li><%= link_to "新規登録", new_user_registration_path, :class => 'post' %></li>
-<%
-=end
-%>
-<% end %>
-</ul>
-</div>
-</nav>
-</header>
-<article>
 <div class="container">
-<div class="jumbotron">
-<%= yield %>
-<%= render 'layouts/footer' %>
+  <div class="jumbotron">
+    <%= yield %>
+<%= render 'layouts/footer'%>
+
+  </div>
+
 </div>
-</div>
-</article>
+
 </body>
 </html>

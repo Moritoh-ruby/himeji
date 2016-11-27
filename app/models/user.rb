@@ -28,8 +28,6 @@ def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
   # twitterではemailを取得できないので、適当に一意のemailを生成
   def self.create_unique_email
     User.create_unique_string + "@example.com"
-  end
-
-
-
+  end 
+ 
 end

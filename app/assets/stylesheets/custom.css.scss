@@ -18,20 +18,62 @@ $goal-achieved: $light-purple;
 
 body {
         background-color:$background-color;        
-        background-image:image-url("money_chokinbako.png");
-        background-position:95%;
+        /* background-image:image-url("money_chokinbako.png"); */
+        /* background-position:95%; */
         color: $body-color; 
         font-family: Meiryo, sans-serif;
 }
+
+.container {
+  width: 98%;
+}
+
 .jumbotron{ 
        background-color: rgba(255,250,250,.50);
        background-repeat:repeat-y;   
        color:$jumbo-color;
 }
 
-/**
-.navbar-default .navbar-nav > li > a {
-**/
+.login {
+  margin-left: auto;
+  text-align: right;
+  float: right;
+}
+
+h2.logo {
+    text-align: center;
+}
+
+.navbar-nav {
+  width: 100%;
+}
+  
+.navbar {
+  padding: 0 8px;  
+}
+
+.navbar ul{  
+  list-style-type: none;  
+  margin: 0;  
+  padding: 0;  
+}  
+  
+.navbar li{  
+  float: left;  
+  margin: 0;  
+  padding: 0;  
+}  
+  
+.navbar a{  
+  text-align: center;  
+  display:block;  
+  padding: 0.5em 0;  
+  color:#000000;  
+}  
+  
+.navbar a:hover{  
+  color: #ffffff;  
+}  
 
 .large-button {
         border: 1px solid $l-button-border-color;
@@ -83,7 +125,17 @@ body {
         -webkit-transition: all .3s;
         transition: all .3s;
 }	
+.large-button-a {
+       width:50px;
+}
 
+#excuse_area {
+ display: none;
+}
+
+.top-element {
+ margin: 8px 0px;
+}
 /* For result **/
 
 .red {
@@ -97,22 +149,15 @@ body {
  width: 70%;
  background-color: white;
  border: gray;
-}
-
-.goal-status {
- width: 20%;
+ margin-top: 5px;
 }
 
 .goal-string {
- width: 50%;
+ width: 70%;
 }
 
 .goal-money {
- width: 20%
-}
-
-.goal-achieved {
- /** background-color: $goal-achieved;**/
+ width: 30%
 }
 
 .goal-trying {
@@ -124,6 +169,12 @@ body {
   width: 10%
 }
 
+.validation-msg {
+  color: red;
+  vertical-align: middle;
+  font-weight: 600;
+}
+
 /** devise **/
 .devise-notice {
  padding: 8px;
@@ -131,11 +182,67 @@ body {
 }
 
 
-/** footer **/
-.footer {
-  p {
-    text-align: center;
-    font-size: 1.4rem;
-  }
+/* レスポンシブのフォントサイズ指定 */
+
+@media screen and (min-width: 0px) and (max-width : 767px){
+    * {
+        font-size:10px;
+    }
+    h1,h2 {
+        font-size: 1.5em;
+    }
+    h3,h4 {
+        font-size: 1.3em;
+    }
+    p,div, .panel-title, .form-control {
+        font-size: 1em;
+    }
+    p.story  {
+        font-size: 1.0em;
+    }
+    .copyright{
+        font-size: 0.7em;
+    }
+    img.logo-img{
+        width: 12%;
+        height: 12%;
+    }
+    h2.logo {
+    margin: 0px;
+   }
+   .navbar li{  
+     float: left;  
+     margin: 0px;  
+     padding: 0;  
+     height: 30px;
+   }  
+   .goal-table {
+    width: 100%;
+    background-color: white;
+    border: gray;
+    margin-top: 5px;
+   }
 }
 
+
+@media screen and (min-width : 768px){ 
+    * {
+        font-size:16px;
+    }
+    .copyright{
+        font-size:18px;
+    }
+    p.story  {
+        font-size:18px;
+        line-height: 1.8;
+    }
+
+}
+
+/** footer **/
+.footer{
+  p{
+   text-align: center;
+   font-size: 1.5rem;
+   }
+}
