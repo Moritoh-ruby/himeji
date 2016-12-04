@@ -1,9 +1,13 @@
 
 <h1>誘惑にまけちゃったタイミング一覧</h1>
- <p><% @current_excuses.each do |excuse| %> </p>
-<TABLE class = "table excuse-table">
-<tr><CENTER><TD class ="excuse-lists"><%=excuse.excuse.to_s %></TD></CENTER></tr>
+<p><% @current_excuses.each do |excuse| %> </p>
+  <tr>
+  <TABLE class = "table excuse-table">
+
+  <CENTER><TD class ="excuse-lists"><%=excuse.excuse.to_s %></TD></CENTER>
+  </tr>
 <% end %> 
+
 </TABLE>
 
 
