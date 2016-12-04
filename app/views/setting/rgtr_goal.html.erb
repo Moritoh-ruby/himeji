@@ -1,0 +1,49 @@
+  <% if current_user.user_goals.exists?(finish: false)  %>
+    <h1>目標確認</h1>
+<div>
+現在の目標を
+<span><a href="/edit" class="large-button large-button-a" >変更</a></span>
+または
+<span><a href="cdhttps://twitter.com/share" class="twitter-share-button" data-text="<%=@current_goal.buttonStr.to_s %>に使いたいので<%=@current_goal.goalMoney.to_i %>円貯めます！ #したつもり貯金 #やるで #aiit_enpit"  data-url="https://goo.gl/D6RWc0"  data-size="small">Tweet</a></span>
+</div>
+      <TABLE class="table goal-table">
+       <TR>
+         <TH class="goal-string">目標</TH>
+         <TH class="goal-money">金額</TH>
+       </TR>
+        <% @goals.each do |goal| %>
+	      <TR>
+          <% if goal.finish? %>
+            <TD><%=goal.buttonStr.to_s %></TD>
+            <TD><%=goal.goalMoney.to_i %></TD>
+          <% else %>
+            <TD class="goal-trying"><%=goal.buttonStr.to_s %></TD>
+            <TD class="goal-trying"><%=goal.goalMoney.to_i %></TD>
+
+          <% end %>
+           </TR>
+        <% end %>
+      </TABLE>
+  <% else %>
+    <h1>目標設定&nbsp;<button class="btn btn-info" data-container="body" data-toggle="popover" data-placement="top" data-html="true" data-content="設定する目標は、トップページとツイートに「〜に使う」というふうに表示されます。<br>「これに貢ぎたい」と思う目標にしてみましょう!<br>5万円まで設定できます。"><i class="glyphicon glyphicon-info-sign"></i></button></h1>
+        <%= form_tag('/rgtr-goal-money', name: "myForm", method: :post, id: "goal_form") do %>
+            <p> 目標：
+            <span id="goal-text-validation-msg" class="validation-msg"></span><br>
+            <input required type="text" name="text_goal" maxlength='20' id="goal-text"></p>
+            <p> 目標金額：<span id="goal-money-validation-msg" class="validation-msg"></span><br>
+            <%= number_field_tag 'money', nil, min: 1, max: 50, step: 1, required: true, id: "goal-money" %>
+            000円</p>
+            <input type="submit" tabIndex="0" value="設定する！！" class="large-button">
+        <% end %> 
+  <% end %>  
+   <h1>やめたいこと&nbsp;<button class="btn btn-info" data-container="body" data-toggle="popover" data-placement="top" data-html="true" data-content="つい無駄遣いしてしまうことを登録しましょう。<br>動詞で終わるといい感じです！"><i class="glyphicon glyphicon-info-sign"></i></button></h1>
+        <% if current_user.endurances.exists? %>
+        <h2><%= @curent_endurance_text  %></h2>
+　　　　<% else %>
+      <h2>現在の設定：コーヒーを飲む</h2>
+        <% end %>
+        <%= form_tag('/endurance', name: "myForm", method: :post, id: "endurance_form") do %>
+            <p> 設定内容: <span id="endurance-validation-msg" class="validation-msg"></span><br>
+            <input type="text" name="endurance" maxlength='20' id="endurance"></p>
+            <input type="submit" tabIndex="0" value= "設定する！！" class="large-button">
+        <% end %>
