@@ -181,13 +181,12 @@ h2.logo {
  border: 1px solid red;
 }
 
-
 /** footer **/
-.footer {
-  p {
-    text-align: center;
-    font-size: 1.4rem;
-  }
+.footer{
+  p{
+   text-align: center;
+   font-size: 1.5rem;
+   }
 }
 
 /* レスポンシブのフォントサイズ指定 */
@@ -233,7 +232,7 @@ h2.logo {
 }
 
 
-@media screen and (min-width : 768px) {
+@media screen and (min-width : 768px){ 
     * {
         font-size:16px;
     }
