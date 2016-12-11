@@ -6,6 +6,8 @@ post '/endurance' => 'setting#create_endurance'
 get  '/create_excuse' => 'excuse#create_excuse'
 post '/create_excuse' => 'excuse#create_excuse' 
 
+get 'show' => 'excuse#show'
+
 get '/edit' => 'update#edit'
 
 patch '/update' => 'update#update'

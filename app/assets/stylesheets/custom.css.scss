@@ -243,5 +243,17 @@ h2.logo {
         font-size:18px;
         line-height: 1.8;
     }
-
 }
+
+/** For excuse tables**/
+.excuse-table {
+ width: 80%;
+ background-color: white;
+ border: gray;
+ margin-top: 5px;
+}
+
+.excuse-lists {
+  background-color: $goal-trying;
+}
+
