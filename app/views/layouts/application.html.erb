@@ -26,7 +26,7 @@
       <li><a href="/setting">設定</a></li>
       <li><%= link_to "ログアウト", destroy_user_session_path, :method => :delete %></li>
   <% else %>
-      <li><%= link_to "ログイン", new_user_session_path, :class => 'post' %></li>
+      <li><a href="/">したつもり貯金</a></li>
       <li><%= link_to "Twitterアカウントでログイン", user_twitter_omniauth_authorize_path %></li>
   <% end %>
   <% if user_signed_in? && current_user.name? %>
@@ -36,8 +36,8 @@
   <% end %>
   </ul>
   </nav>
-  </header>
-
+ </header>
+ <h2><a href="#depo">したつもり貯金とは？</a></h2>
 <div class="container">
   <div class="jumbotron">
     <%= yield %>
