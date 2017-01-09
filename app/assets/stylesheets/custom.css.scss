@@ -40,6 +40,15 @@ body {
   float: right;
 }
 
+.top-form {
+  text-align: center;
+}
+
+.top-info-title {
+  text-align: center;
+  margin-top: 38px;
+}
+
 h2.logo {
     text-align: center;
 }
@@ -184,6 +193,7 @@ h2.logo {
 /** footer **/
 .footer{
   p{
+   color: white;
    text-align: center;
    font-size: 1.5rem;
    }
@@ -206,6 +216,9 @@ h2.logo {
     }
     p.story  {
         font-size: 1.0em;
+    }
+    div.top-info > p {
+        font-size: 1.1em;
     }
     .copyright{
         font-size: 0.7em;

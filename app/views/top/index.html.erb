@@ -1,4 +1,5 @@
  
+  <div class="top-form">
        <%= form_tag('/result', name: "my_form", method: :post) do %> 
        <p class="top-element"> 金額：
          <select id="money1" name="money1">
@@ -31,27 +32,26 @@
            <input type="submit" tabIndex="0" value="貯金を1回休みにする" class="large-button">　
          </div>
        <% end %>
-     <br><br><br><br><br><br><br><br><br><br>
-  
+    </div>
+    <div class="top-info">
     <div id="depo"> 
-            <center><h2>したつもり貯金とは</h2><center>
-     </div>
-       <p>日々のちょっとしたお金の無駄遣いを「したつもり」になってかわりに本当にしたいこと・欲しいものにお金を使うことをサポートするアプリです。<br/>                           
-　　　　自分のツイッターアカウントで、「したつもり」をドヤることができることが特長です。</p>
-　　　
+         <h2 class="top-info-title">したつもり貯金とは</h2>
+    </div>
+       <p>日々のちょっとしたお金の無駄遣いを「したつもり」になってかわりに本当にしたいこと・欲しいものにお金を使うことをサポートするアプリです。<br/>
+自分のツイッターアカウントで、「したつもり」をドヤることができることが特長です。</p>
 
-     <center><h2>ログインすると何ができるの？</h2><center>
+     <h2 class="top-info-title">ログインすると何ができるの？</h2>
      <p>●「本当にお金を使いたいもの」を設定できます。</p>
-     <p>●「したつもり」にすることを設定できます。    </p>
-     <p>● いままでの貯金の合計金額がわかります。      </p>
+     <p>●「したつもり」にすることを設定できます。</p>
+     <p>● いままでの貯金の合計金額がわかります。</p>
 
+     <h2 class="top-info-title">続けられるかな？</h2>
+     <p>他のみんなのつぶやきを見て、やる気を分けてもらいましょう！どんな設定だと続けられそうか、ヒントが見つかるかも？</p>
 
-     <center><h2>続けられるかな？</h2><center>
-     <p>他のみんなのつぶやきを見て、やる気を分けてもらいましょう！</br>
-      どんな設定だと続けられそうか、ヒントが見つかるかも？</p>
-
-　   <center><a href=#twitter><h2>みんなのツイートを見てみる</h2></a><center>
-  <br><br><br><br><br>
-    <div id="twitter">
+　   <a href="#twitter">
+     <h2 class="top-info-title">みんなのツイートを見てみる</h2>
+     </a>
+   </div>
+    <center><div id="twitter">
   <a class="twitter-timeline"  href="https://twitter.com/hashtag/%E3%81%97%E3%81%9F%E3%81%A4%E3%82%82%E3%82%8A%E8%B2%AF%E9%87%91" data-widget-id="785352546680352768"></a>
-　</div>　
+　</div></center>
