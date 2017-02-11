@@ -37,12 +37,19 @@
   </ul>
   </nav>
 </header>
+ <center><a href="#depo"><h2>したつもり貯金とは？</h2></a></center>
+<% unless user_signed_in? %>
+<center><h1><%= link_to "Twitterアカウントでログイン", user_twitter_omniauth_authorize_path %></h1></center>
+<% end %>
 <div class="container">
   <div class="jumbotron">
     <%= yield %>
   </div>
 </div>
 <center><a href="/"><h2>トップに戻る</h2></a></center> 
+<% unless user_signed_in? %>
+<center><h1><%= link_to "Twitterアカウントでログイン", user_twitter_omniauth_authorize_path %></h1></center>
+<% end %>
 <%= render 'layouts/footer' %>
 </body>
 </html>
