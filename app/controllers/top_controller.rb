@@ -15,6 +15,8 @@ class TopController < ApplicationController
      else
        @endurance_button_text = "コーヒーを飲む"
      end
+     #トップページは別レイアウト
+     render :layout => 'indexapp'
   end
 
   def result
